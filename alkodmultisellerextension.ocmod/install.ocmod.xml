@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created using vQModerator's XML Generator by The Wizard of Osch for http://www.crystalcopy.nl //-->
+<modification>
+  <name>
+    <![CDATA[Alkod Multi Seller Extension pro]]>
+  </name>
+  <version>2.0</version>
+  <author>
+    <![CDATA[ibrahim]]>
+  </author>
+  <code>alkodmultisellerextension</code>
+  <description>
+    <![CDATA[]]>
+  </description>
+
+  <file path="admin/language/en-gb/report/customer_activity.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[
+$_['text_product_add']    = '<a href="customer_id=%d">%s</a> added a new product.';
+$_['text_product_edit']    = '<a href="customer_id=%d">%s</a> updated their product.';
+$_['text_product_delete']    = '<a href="customer_id=%d">%s</a> deleted one of their product.';
+$_['text_product_copy']    = '<a href="customer_id=%d">%s</a> copy one of their product.';
+$_['text_bankaccount_add']    = '<a href="customer_id=%d">%s</a> added a new bank account.';
+$_['text_bankaccount_edit']    = '<a href="customer_id=%d">%s</a> updated their bank account.';
+$_['text_bankaccount_delete']    = '<a href="customer_id=%d">%s</a> deleted one of their bank account.';
+$_['text_request_add']    = '<a href="customer_id=%d">%s</a> request new membership.';
+$_['text_profile_update']    = '<a href="customer_id=%d">%s</a> updated their profile.';
+
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ar/report/customer_activity.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_product_add']    = '<a href="customer_id=%d">%s</a> أضاف منتج جديد.';
+$_['text_product_edit']    = '<a href="customer_id=%d">%s</a> قام بتحديث أحد منتجاته.';
+$_['text_product_delete']    = '<a href="customer_id=%d">%s</a> قام بحذف أحد منتجاته.';
+$_['text_product_copy']    = '<a href="customer_id=%d">%s</a> قام بنسخ أحد منتجاته.';
+$_['text_bankaccount_add']    = '<a href="customer_id=%d">%s</a> أضاف حساب بنكي.';
+$_['text_bankaccount_edit']    = '<a href="customer_id=%d">%s</a> قام بتحديث أحد حساباته البنكية.';
+$_['text_bankaccount_delete']    = '<a href="customer_id=%d">%s</a> قام بحذف أحد حساباته البنكية.';
+$_['text_request_add']    = '<a href="customer_id=%d">%s</a> طلب عضوية بائع جديدة.';
+$_['text_profile_update']    = '<a href="customer_id=%d">%s</a> قام بتحديث ملفه الشخصي.';
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/en-gb/extension/dashboard/activity.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_customer_product_add']    = '<a href="customer_id=%d">%s</a> added a new product.';
+$_['text_customer_product_edit']    = '<a href="customer_id=%d">%s</a> updated their product.';
+$_['text_customer_product_delete']    = '<a href="customer_id=%d">%s</a> deleted one of their product.';
+$_['text_customer_product_copy']    = '<a href="customer_id=%d">%s</a> copy one of their product.';
+$_['text_customer_bankaccount_add']    = '<a href="customer_id=%d">%s</a> added a new bank account.';
+$_['text_customer_bankaccount_edit']    = '<a href="customer_id=%d">%s</a> updated their bank account.';
+$_['text_customer_bankaccount_delete']    = '<a href="customer_id=%d">%s</a> deleted one of their bank account.';
+$_['text_customer_request_add']    = '<a href="customer_id=%d">%s</a> request new membership.';
+$_['text_customer_profile_update']    = '<a href="customer_id=%d">%s</a> updated their profile.';
+
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ar/extension/dashboard/activity.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_customer_product_add']    = '<a href="customer_id=%d">%s</a> أضاف منتج جديد.';
+$_['text_customer_product_edit']    = '<a href="customer_id=%d">%s</a> قام بتحديث أحد منتجاته.';
+$_['text_customer_product_delete']    = '<a href="customer_id=%d">%s</a> قام بحذف أحد منتجاته.';
+$_['text_customer_product_copy']    = '<a href="customer_id=%d">%s</a> قام بنسخ أحد منتجاته.';
+$_['text_customer_bankaccount_add']    = '<a href="customer_id=%d">%s</a> أضاف حساب بنكي.';
+$_['text_customer_bankaccount_edit']    = '<a href="customer_id=%d">%s</a> قام بتحديث أحد حساباته البنكية.';
+$_['text_customer_bankaccount_delete']    = '<a href="customer_id=%d">%s</a> قام بحذف أحد حساباته البنكية.';
+$_['text_customer_request_add']    = '<a href="customer_id=%d">%s</a> طلب عضوية بائع جديدة.';
+$_['text_customer_profile_update']    = '<a href="customer_id=%d">%s</a> قام بتحديث ملفه الشخصي.';
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/dashboard.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<div class="col-lg-3 col-md-3 col-sm-6"><?php echo $online; ?></div>]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[
+<div class="col-lg-3 col-md-3 col-sm-6"><?php echo $seller_order; ?></div>
+<div class="col-lg-3 col-md-3 col-sm-6"><?php echo $seller_sale; ?></div>
+<div class="col-lg-3 col-md-3 col-sm-6"><?php echo $seller; ?></div>
+<div class="col-lg-3 col-md-3 col-sm-6"><?php echo $seller_online; ?></div>]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/controller/common/dashboard.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['online'] = $this->load->controller('dashboard/online');]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$data['seller_order'] = $this->load->controller('sellerdashboard/seller_order');
+$data['seller'] = $this->load->controller('sellerdashboard/seller');
+$data['seller_online'] = $this->load->controller('sellerdashboard/seller_online');
+$data['seller_sale'] = $this->load->controller('sellerdashboard/seller_sale');
+]]>
+      </add>
+    </operation>
+  </file>
+
+ <file path="admin/controller/common/column_left.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Catalog]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[
+        // seller
+			$seller = array();
+			
+			if ($this->user->hasPermission('access', 'seller/seller')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_sellers'),
+					'href'     => $this->url->link('seller/seller', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'seller/seller_group')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_seller_group'),
+					'href'     => $this->url->link('seller/seller_group', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'seller/product')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_seller_product'),
+					'href'     => $this->url->link('seller/product', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'seller/order')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_seller_order'),
+					'href'     => $this->url->link('seller/order', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'sellerreview/sellerreview')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_seller_review'),
+					'href'     => $this->url->link('sellerreview/sellerreview', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'badge/badge')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_badge'),
+					'href'     => $this->url->link('badge/badge', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'bank/bank')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_bank'),
+					'href'     => $this->url->link('bank/bank', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($this->user->hasPermission('access', 'seller/setting')) {
+				$seller[] = array(
+					'name'	   => $this->language->get('text_seller_setting'),
+					'href'     => $this->url->link('seller/setting', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+			
+			if ($seller) {
+				$data['menus'][] = array(
+					'id'       => 'menu-seller',
+					'icon'	   => 'fa-users', 
+					'name'	   => $this->language->get('text_sellers'),
+					'href'     => '',
+					'children' => $seller
+				);		
+			}
+
+
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/en-gb/common/column_left.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_sellers']                      = 'Seller';
+$_['text_seller_group']                      = 'Seller Group';
+$_['text_seller_product']                      = 'Seller Products';
+$_['text_seller_order']                      = 'Seller Order';
+$_['text_seller_review']                      = 'Seller Review';
+$_['text_seller_setting']                      = 'Setting';
+$_['text_badge']                      = 'Badges';
+$_['text_bank']                      = 'Banks';
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ar/common/column_left.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_sellers']                      = 'الباعة';
+$_['text_seller_group']                      = 'مجموعات الباعة';
+$_['text_seller_product']                      = 'منتجات الباعة';
+$_['text_seller_order']                      = 'طلبيات الباعة';
+$_['text_seller_review']                      = 'تقييمات الباعة';
+$_['text_seller_setting']                      = 'الاعدادات';
+$_['text_badge']                      = 'اﻷوسمة';
+$_['text_bank']                      = 'البنوك';
+]]>
+      </add>
+    </operation>
+  </file>
+
+ <file path="catalog/view/theme/*/template/common/header.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[ <?php if ($logged && $isseller) { ?>
+				   <li class="dropdown"><a href="<?php echo $seller_profile; ?>" title="<?php echo $text_seller_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> <span class="hidden-xs hidden-sm hidden-md" style="
+    color: red;
+"><?php echo $text_seller_account; ?></span> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right" style="background-color: wheat;">
+
+            <li><a href="<?php echo $seller_profile; ?>"><?php echo $text_seller_account; ?></a></li>
+            <li><a href="<?php echo $seller_order; ?>"><?php echo $text_seller_order; ?></a></li>
+            <li><a href="<?php echo $seller_product; ?>"><?php echo $text_seller_product; ?></a></li>
+<li><a href="<?php echo $seller_bankaccount; ?>"><?php echo $text_seller_bankaccount; ?></a></li>
+<li><a href="<?php echo $seller_shipping; ?>"><?php echo $text_seller_shipping; ?></a></li>
+  <li><a href="<?php echo $sellerdownload; ?>"><?php echo $text_sellerdownload; ?></a></li>
+
+          </ul>
+        </li>
+               <?php } ?>]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['logged'] = $this->customer->isLogged();]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[$data['isseller'] = $this->customer->isSeller();
+/*
+				if($this->customer->isSeller()){
+			$this->load->model('sellerprofile/sellerprofile');
+			$seller_info = $this->model_sellerprofile_sellerprofile->getseller($this->customer->getId());
+			if( strtotime('now') > strtotime("+".$seller_info['subscription_duration'] ."months", strtotime($seller_info['seller_date_added']))) {
+
+			$this->load->language('sellerprofile/sellerprofile');
+
+
+
+		$disapprove_comment = $this->language->get('disapprove_comment');
+		$this->model_sellerprofile_sellerprofile->addHistory($this->customer->getId(), $disapprove_comment);
+		$this->model_sellerprofile_sellerprofile->disapprove($this->customer->getId());
+
+			}
+
+		}
+
+		*/]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['account'] = $this->url->link('account/account',]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[$data['seller_profile'] = $this->url->link('sellerprofile/sellerprofile', '', 'SSL');
+$data['seller_order'] = $this->url->link('order/order', '', 'SSL');
+$data['seller_product'] = $this->url->link('sellerproduct/product', '', 'SSL');
+$data['seller_bankaccount'] = $this->url->link('bankaccount/bankaccount', '', 'SSL');
+$data['seller_shipping'] = $this->url->link('extension/shipping', '', 'SSL');
+
+$data['text_seller_account'] = $this->language->get('text_seller_account');
+$data['text_seller_order'] = $this->language->get('text_seller_order');
+$data['text_seller_product'] = $this->language->get('text_seller_product');
+$data['text_seller_bankaccount'] = $this->language->get('text_seller_bankaccount');
+$data['text_seller_shipping'] = $this->language->get('text_seller_shipping');
+
+$data['text_sellerdownload'] = $this->language->get('text_sellerdownload');
+$data['sellerdownload'] = $this->url->link('sellerproduct/download', '', '');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/en-gb/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[	$_['text_seller_account']          = 'Seller Account';
+			$_['text_seller_order']          = 'My Orders';
+			$_['text_seller_product']          = 'My Products';
+			$_['text_seller_bankaccount']          = 'My Bank Accounts';
+			$_['text_seller_shipping']          = 'My Shipping Methods';
+			$_['text_sellerdownload']                      = 'My Downloads';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/ar/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[	$_['text_seller_account']          = 'حسابي ( بائع )';
+			$_['text_seller_order']          = 'طلبيات منتجاتي';
+			$_['text_seller_product']          = 'منتجاتي';
+			$_['text_seller_bankaccount']          = 'حساباتي البنكية';
+			$_['text_seller_shipping']          = 'طرق شحني';
+			$_['text_sellerdownload']                      = 'ملفات التنزيل';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/view/theme/*/template/product/product.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<?php if ($reward) { ?>]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[<?php if ($seller_profile_at_product_page) { ?>
+<link href="catalog/view/theme/default/stylesheet/alkod_stylesheet.css" rel="stylesheet">
+
+		<div class="list-unstyled">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+<img class="card-seller-info-bkimg" alt="" src="<?php echo $seller_banner; ?>">
+                </div>
+  <?php if ($seller_image) { ?>
+                <div class="avatar">
+                    <img alt="" src="<?php echo $seller_image; ?>">
+                </div>
+   <?php } ?>
+                <div class="info">
+  <?php if ($nickname) { ?>
+                    <div class="title">
+                        <a target="_blank" href="<?php echo $seller ?>"><?php echo $nickname; ?></a>
+                    </div>
+			  <?php }else{ ?>
+			  <div class="title">
+                        <a target="_blank" href="<?php echo $seller ?>"><?php echo $seller_name; ?></a>
+                    </div>
+			  
+			  <?php } ?>
+	 <?php if ($seller_date_added) { ?>
+                    <div class="desc"><?php echo $text_seller_date_of_create; ?><?php echo $seller_date_added; ?></div>
+				<?php } ?>
+	   <?php if ($seller_product_total) { ?>
+                    <div class="desc"><?php echo $text_seller_number_of_product; ?><?php echo $seller_product_total; ?></div>
+				<?php } ?>
+				<?php if($sellerwebsite){ ?>
+                    <a rel="publisher"
+                       href="<?php echo $sellerwebsite; ?>" target="_blank">
+                       <?php echo $sellerwebsite; ?>
+                    </a>
+				  <?php } ?>
+		 <?php if ($badges) { ?>
+					   <?php foreach ($badges as $badge) { ?>
+
+          <div class="desc"><?php echo $badge['title']; ?><img src="<?php echo $badge['image']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></div>
+
+
+     <?php } ?>
+              <?php } ?>
+
+		   <?php if ($seller_rating) { ?>
+         <div class="desc"> <?php for ($i = 1; $i <= 5; $i++) { ?>
+      <?php if ($seller_rating < $i) { ?>
+    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
+              <?php } else { ?>
+              <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+
+      <?php } ?>
+      <?php } ?></div>
+          <?php } ?>
+
+                </div>
+                <div class="bottom">
+                <div class="status-upload">
+                	<ul>
+			<?php if($sellertwitter){ ?>
+                    <li><a title="" href="<?php echo $sellertwitter; ?>" target="_blank" data-placement="bottom" data-original-title="Audio"><i class="fa fa-twitter"></i></a></li>
+			 <?php } ?>
+			  <?php if($sellergoogleplus){ ?>
+                    <li><a title="" href="<?php echo $sellergoogleplus; ?>" target="_blank" data-placement="bottom" data-original-title="Audio"><i class="fa fa-google-plus"></i></a></li>
+				<?php } ?>
+				 <?php if($sellerfacebook){ ?>
+                  <li><a title="" href="<?php echo $sellerfacebook; ?>" target="_blank" data-placement="bottom" data-original-title="Audio"><i class="fa fa-facebook"></i></a></li>
+				  <?php } ?>
+				    <?php if($sellerinstagram){ ?>
+			                   <li><a title="" href="<?php echo $sellerinstagram; ?>" target="_blank" data-placement="bottom" data-original-title="Audio"><i class="fa fa-instagram"></i></a></li>
+			        <?php } ?>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <?php } ?>
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/product/product.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['reward'] = $product_info['reward'];]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[
+$data['text_seller'] = $this->language->get('text_seller');
+$data['text_seller_date_of_create'] = $this->language->get('text_seller_date_of_create');
+$data['text_seller_number_of_product'] = $this->language->get('text_seller_number_of_product');
+$data['text_seller'] = $this->language->get('text_seller');
+
+
+						// sellers
+		$this->load->model('sellerprofile/sellerprofile');
+
+			$seller = $this->model_sellerprofile_sellerprofile->getProductsellers($this->request->get['product_id']);
+
+$data['seller_profile_at_product_page']='0';
+			if ($seller) {
+			  if($this->config->get('config_sellerproductname') ||$this->config->get('config_sellerproductimage') || $this->config->get('config_sellerproductrating') || $this->config->get('config_sellerproductcount') || $this->config->get('config_sellerproductdateofcreat') || $this->config->get('config_sellerproductbadge')  ) {
+				$data['seller_profile_at_product_page']='1';
+			$this->load->model('tool/image');
+
+					if($this->config->get('config_sellerproductname')){
+					$data['seller_name'] =  $seller['firstname']." ".$seller['lastname'];
+					$data['nickname'] =  $seller['nickname'];
+				}else{
+					$data['seller_name'] =  '';
+					$data['nickname'] = '';
+				}
+					if($this->config->get('config_sellerproductimage')){
+					$data['seller_image']  =  (is_file(DIR_IMAGE . $seller['image']) ? $this->model_tool_image->resize($seller['image'], 100, 100) : $this->model_tool_image->resize('no_image.png', 100, 100));
+					  $data['seller_banner']  =  (is_file(DIR_IMAGE . $seller['banner']) ? $this->model_tool_image->resize($seller['banner'], 360, 135) : $this->model_tool_image->resize('no_image.png', 100, 100));
+					  $data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+				}else{
+					  $data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+					$data['seller_image']  =  '';
+					$data['seller_banner']  =  '';
+				}
+					if($this->config->get('config_sellerproductdateofcreat')){
+					$data['seller_date_added'] =  date($this->language->get('date_format_short'), strtotime($seller['seller_date_added']));
+				}else{
+					$data['seller_date_added'] =  '';
+				}
+					if($this->config->get('config_sellerproductcount')){
+					$data['seller_product_total'] = $this->model_sellerprofile_sellerprofile->getTotalProductsbysellerID($seller['customer_id']);
+				}else{
+					$data['seller_product_total'] = '';
+				}
+					if($this->config->get('config_sellerproductbadge')){
+					$seller_badge_results = $this->model_sellerprofile_sellerprofile->getsellerbadgesbysellerID($seller['customer_id']);
+
+					$data['badges'] = array();
+
+					foreach ($seller_badge_results as $result) {
+					$data['badges'][] = array(
+				'badge_id'     => $result['badge_id'],
+				'title'     => $result['title'],
+				'image'  =>  (is_file(DIR_IMAGE . $result['image']) ? $this->model_tool_image->resize($result['image'], 40, 40) : $this->model_tool_image->resize('no_image.png', 40, 40))
+			);
+		}
+					}else{
+
+					$data['badges'][] = array(
+				'badge_id'     => '',
+				'title'     => '',
+				'image'  =>  ''
+			);
+				}
+
+							if($this->config->get('config_sellerproductrating')){
+					$seller_review_results = $this->model_sellerprofile_sellerprofile->getsellerreviewbysellerID($seller['customer_id']);
+					if($seller_review_results){
+					$data['seller_rating'] = (int)$seller_review_results['total'];
+
+
+
+			}else{
+				$data['seller_rating'] = '0';
+			}
+
+
+				}
+
+
+
+
+
+
+					$data['seller'] = $this->url->link('seller/seller/info', '' . '&seller_id=' . $seller['seller_id'] , 'SSL');
+
+
+			}else{
+				$data['seller_profile_at_product_page']='0';
+			  }
+			  if($this->config->get('config_sellerwebsite') || $this->config->get('config_sellerfacebook') ||$this->config->get('config_sellertwitter') || $this->config->get('config_sellergoogleplus') || $this->config->get('config_sellerinstagram')) {
+				$data['sellersocial'] = '1';
+
+			  }else{
+					$data['sellersocial'] = '0';
+				}
+				if($this->config->get('config_sellerwebsite')){
+				 $data['sellerwebsite'] = $seller['website'];
+			   }else{
+					$data['sellerwebsite'] = '0';
+				}
+			   if($this->config->get('config_sellerfacebook')){
+				 $data['sellerfacebook'] = $seller['facebook'];
+			   }else{
+					$data['sellerfacebook'] = '0';
+				}
+				    if($this->config->get('config_sellertwitter')){
+				 $data['sellertwitter'] = $seller['twitter'];
+			   }else{
+					$data['sellertwitter'] = '0';
+				}
+					   	    if($this->config->get('config_sellergoogleplus')){
+				 $data['sellergoogleplus'] = $seller['googleplus'];
+			   }else{
+					$data['sellergoogleplus'] = '0';
+				}
+			  		   	    if($this->config->get('config_sellerinstagram')){
+				 $data['sellerinstagram'] = $seller['instagram'];
+			   }else{
+					$data['sellerinstagram'] = '0';
+				}
+
+
+			}
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/en-gb/product/product.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_seller']                      = 'Seller :';
+$_['text_seller_date_of_create']                      = 'Registration Date : ';
+$_['text_seller_number_of_product']                      = 'Number Of Products : ';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/ar/product/product.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_seller']                      = 'البائع :';
+$_['text_seller_date_of_create']                      = 'تاريخ الانضمام : ';
+$_['text_seller_number_of_product']                      = 'عدد المنتجات : ';
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/view/theme/*/template/account/account.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<?php echo $content_bottom; ?></div>]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[
+<div class="well" style="background-color: wheat;">
+<h2><?php echo $text_seller; ?></h2>
+      <ul class="list-unstyled">
+        <li><a href="<?php echo $sellerprofile; ?>"><?php echo $text_sellerprofile; ?></a></li>
+        <li><a href="<?php echo $bankaccount; ?>"><?php echo $text_bankaccount; ?></a></li>
+
+        <li><a href="<?php echo $sellerproduct; ?>"><?php echo $text_sellerproduct; ?></a></li>
+        <li><a href="<?php echo $sellershipping; ?>"><?php echo $text_sellershipping; ?></a></li>
+      <li><a href="<?php echo $sellerorder; ?>"><?php echo $text_sellerorder; ?></a></li>
+		<li><a href="<?php echo $sellerdownload; ?>"><?php echo $text_sellerdownload; ?></a></li>
+ </div>   
+ </ul>]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/controller/account/account.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['edit'] = $this->url->link('account/edit', '', true);]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$data['text_seller'] = $this->language->get('text_seller');
+$data['text_sellerprofile'] = $this->language->get('text_sellerprofile');
+$data['sellerprofile'] = $this->url->link('sellerprofile/sellerprofile', '', 'SSL');
+
+$data['text_bankaccount'] = $this->language->get('text_bankaccount');
+$data['bankaccount'] = $this->url->link('bankaccount/bankaccount', '', '');
+
+$data['text_sellerproduct'] = $this->language->get('text_sellerproduct');
+$data['sellerproduct'] = $this->url->link('sellerproduct/product', '', '');
+
+$data['text_sellershipping'] = $this->language->get('text_sellershipping');
+$data['sellershipping'] = $this->url->link('extension/shipping', '', '');
+
+$data['text_sellerproduct'] = $this->language->get('text_sellerproduct');
+$data['sellerproduct'] = $this->url->link('sellerproduct/product', '', '');
+
+$data['text_sellerorder'] = $this->language->get('text_sellerorder');
+$data['sellerorder'] = $this->url->link('order/order', '', '');
+
+$data['text_sellerdownload'] = $this->language->get('text_sellerdownload');
+$data['sellerdownload'] = $this->url->link('sellerproduct/download', '', '');]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/en-gb/account/account.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_seller']                      = 'Seller';
+$_['text_sellerprofile']                      = 'My Profile';
+$_['text_bankaccount']                      = 'My Bank Account';
+$_['text_sellershipping']                      = 'My Shipping Methods';
+$_['text_sellerorder']                      = 'My Products Orders';
+$_['text_sellerproduct']                      = 'My Products';
+$_['text_sellerdownload']                      = 'My Downloads';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="catalog/language/ar/account/account.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_seller']                      = 'ادارة حساب بائع';
+$_['text_sellerprofile']                      = 'ملفي الشخصي';
+$_['text_bankaccount']                      = 'الحسابات البنكية';
+$_['text_sellershipping']                      = 'طرق الشحن';
+$_['text_sellerorder']                      = 'طلبات منتجاتي';
+$_['text_sellerproduct']                      = 'منتجاتي';
+$_['text_sellerdownload']                      = 'ملفات التنزيل';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="system/library/cart/customer.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[private $customer_id;]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[private $seller_id;
+  private $seller_group_id;
+  private $seller_product_status;
+  private $bank_id;]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[$this->customer_id = $customer_query->row['customer_id'];]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[$this->seller_id = $customer_query->row['seller_approved'];
+  $this->seller_group_id = $customer_query->row['seller_group_id'];
+  $this->seller_product_status = $customer_query->row['product_status'];
+  $this->bank_id = $customer_query->row['bankaccount_id'];]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[$this->customer_id = '';]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[$this->seller_id = '';
+  $this->seller_group_id = '';
+  $this->seller_product_status = '';
+  $this->bank_id = '';]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[public function isLogged() {]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[public function isSeller() {
+  return  $this->seller_id;
+  }
+  public function getSellerGroupId() {
+    return $this->seller_group_id;
+  }
+  public function getSellerProductStatus() {
+    return $this->seller_product_status;
+  }
+  public function getSellerGroupProductStatus() {
+  $query = $this->db->query("SELECT product_status FROM " . DB_PREFIX . "seller_group WHERE seller_group_id = '" . (int)$this->seller_group_id . "'");
+
+    return $query->row['product_status'];
+  }
+  public function getBankId() {
+    return $this->bank_id;
+  }
+  ]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/controller/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Customers]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[
+// sellers
+$this->load->language('common/column_left');
+		$data['text_seller'] = $this->language->get('text_sellers');
+			$this->load->model('seller/seller');
+
+			$seller_total = $this->model_seller_seller->getTotalsellers(array('filter_seller_approved' => false));
+
+$seller_product_total = $this->model_seller_seller->getTotalProductsSeller(array('filter_status' => 2));
+
+
+			$data['text_seller_approval'] = $this->language->get('text_seller_approval');
+$data['text_seller_product_approval'] = $this->language->get('text_seller_product_approval');
+
+			$data['seller_total'] = $seller_total;
+$data['seller_product_total'] = $seller_product_total;
+			$data['seller_approval'] = $this->url->link('seller/seller', 'token=' . $this->session->data['token'] . '&filter_seller_approved=0', 'SSL');
+$data['seller_product_approval'] = $this->url->link('seller/product', 'token=' . $this->session->data['token'] . '&filter_status=2', 'SSL');
+]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['alerts'] = $customer_total + $product_total + $review_total + $return_total + $affiliate_total;]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$data['seller_alerts'] = $seller_total + $seller_product_total;]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/en-gb/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[	$_['text_seller_approval']           = 'Pending Approval';
+$_['text_seller_product_approval']           = 'Product Need Approval';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ar/common/header.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['text_seller_approval']           = 'باعة بانتظار الموافقة';
+$_['text_seller_product_approval']           = 'منتجات بانتظار الموافقه';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/common/header.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<ul class="nav pull-right">]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[<ul class="nav pull-right">
+				 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="label label-danger pull-left"><?php echo $seller_alerts; ?></span> <i class="fa fa-users fa-lg"></i></a>
+      <ul class="dropdown-menu dropdown-menu-right alerts-dropdown">
+
+        <li class="dropdown-header"><?php echo $text_seller; ?></li>
+        <li><a href="<?php echo $seller_approval; ?>"><span class="label label-danger pull-right"><?php echo $seller_total; ?></span><?php echo $text_seller_approval; ?></a></li>
+		  <li><a href="<?php echo $seller_product_approval; ?>"><span class="label label-danger pull-right"><?php echo $seller_product_total; ?></span><?php echo $text_seller_product_approval; ?></a></li>
+      </ul>
+    </li>]]>
+      </add>
+    </operation>
+  </file>
+  <file path="admin/language/en-gb/setting/setting.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['tab_multiseller_setting'] = 'MultiSeller Setting';
+$_['tab_multisellergeneral'] = 'General';
+$_['tab_multisellerproductsetting'] = 'Products Settings';
+$_['tab_multisellerordersetting'] = 'Orders Settings';
+$_['tab_multisellerdownloadsetting'] = 'Downloads Settings';
+
+$_['text_sellerdownloadstatus'] = 'Allow Seller to Upload files';
+
+$_['text_seller_agree'] = 'Seller Agree';
+$_['text_sellerreview'] = 'Seller Review Status';
+$_['text_sellerreviewguest'] = 'Allow Guest To Review Seller';
+
+$_['text_sellerorderstatus'] = 'Allow Seller to Change Order Status';
+$_['text_sellerordernotifyhistory'] = 'Allow Seller to notify and comment customer';
+$_['text_sellerordersettlement'] = 'Allow Seller to settlement the order';
+
+$_['text_sellerimageupload'] = 'Allow seller to upload avatar';
+$_['text_sellerprofileimage'] = 'Show seller avatar at profile';
+$_['text_sellerproductname'] = 'Show seller name at product page';
+$_['text_sellerproductimage'] = 'Show seller image at product page';
+$_['text_sellerproductdateofcreat'] = 'Show seller date of creat at product page';
+$_['text_sellerproductcount'] = 'Show seller number of product at product page';
+$_['text_sellerproductbadge'] = 'Show seller badge at product page';
+$_['text_sellerproductrating'] = 'Show Seller rating at product page';
+
+$_['text_sellerwebsite'] = 'Show seller website at product page';
+$_['text_sellerfacebook'] = 'Show seller facebook account at product page';
+$_['text_sellertwitter'] = 'Show seller twitter account at product page';
+$_['text_sellergoogleplus'] = 'Show seller Google+ account at product page';
+$_['text_sellerinstagram'] = 'Show seller instagram account at product page';
+$_['text_seller_add_product_alert'] = 'Seller Add Product Alert Mail';
+]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/language/ar/setting/setting.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[// Text]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$_['tab_multiseller_setting'] = 'MultiSeller اعدادات';
+$_['tab_multisellergeneral'] = 'عام';
+$_['tab_multisellerproductsetting'] = 'اعدادات المنتجات';
+$_['tab_multisellerordersetting'] = 'اعدادات الطلبيات';
+$_['tab_multisellerdownloadsetting'] = 'اعدادات التنزيلات';
+
+$_['text_sellerdownloadstatus'] = 'السماح للباعة برفع ملفات للتنزيل';
+
+$_['text_seller_agree'] = 'شروط انشاء حساب بائع';
+$_['text_sellerreview'] = 'حالة تقييم الباعة';
+$_['text_sellerreviewguest'] = 'السماح للزوار بتقييم الباعة؟';
+
+$_['text_sellerorderstatus'] = 'السماح للباعة بتغيير حالة الطلب';
+$_['text_sellerordernotifyhistory'] = 'السماح للباعة بتنيه العميل واضافة تعليقات';
+$_['text_sellerordersettlement'] = 'السماح للباعة بمخالصة الطلبات';
+
+$_['text_sellerimageupload'] = 'السماح للبائع برفع صورة شخصية';
+$_['text_sellerprofileimage'] = 'عرص الصورة الشخصية في ملف البائع';
+$_['text_sellerproductname'] = 'عرض اسم البائع في صفحة المنتج';
+$_['text_sellerproductimage'] = 'عرض صورة البائع في صفحة المنتج';
+$_['text_sellerproductdateofcreat'] = 'عرض تاريخ انضمام البائع في صفحة المنتج';
+$_['text_sellerproductcount'] = 'عرض عدد منتجات البائع في صفحة المنتج';
+$_['text_sellerproductbadge'] = 'عرض أوسمة البائع في صفحة المنتج';
+$_['text_sellerproductrating'] = 'عرض تقييم البائع في صفحة المنتج';
+
+$_['text_sellerwebsite'] = 'عرض موقع البائع في صفحة المنتج';
+$_['text_sellerfacebook'] = 'عرض حساب فيسبوك البائع في صفحة المنتج';
+$_['text_sellertwitter'] = 'عرض حساب تويتر البائع في صفحة المنتج';
+$_['text_sellergoogleplus'] = 'عرض حساب غوغول بلس البائع في صفحة المنتج';
+$_['text_sellerinstagram'] = 'عرض حساب انستاغرام البائع في صفحة المنتج';
+$_['text_seller_add_product_alert'] = 'تنبيه مدير المتجر عند اضافة منتج جديد';]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/controller/setting/setting.php">
+    <operation>
+      <search trim="true">
+        <![CDATA[$data['tab_server'] = $this->language->get('tab_server');]]>
+      </search>
+      <add position="after" trim="false">
+        <![CDATA[$data['tab_multiseller_setting'] = $this->language->get('tab_multiseller_setting');
+$data['tab_multisellergeneral'] = $this->language->get('tab_multisellergeneral');
+$data['tab_multisellerproductsetting'] = $this->language->get('tab_multisellerproductsetting');
+$data['tab_multisellerordersetting'] = $this->language->get('tab_multisellerordersetting');
+$data['tab_multisellerdownloadsetting'] = $this->language->get('tab_multisellerdownloadsetting');
+$data['text_sellerdownloadstatus'] = $this->language->get('text_sellerdownloadstatus');
+
+if (isset($this->request->post['config_sellerdownloadstatus'])) {
+						$data['config_sellerdownloadstatus'] = $this->request->post['config_sellerdownloadstatus'];
+					} else {
+						$data['config_sellerdownloadstatus'] = $this->config->get('config_sellerdownloadstatus');
+					}
+
+$data['text_seller_agree'] = $this->language->get('text_seller_agree');
+
+if (isset($this->request->post['config_seller_agree'])) {
+  $data['config_seller_agree'] = $this->request->post['config_seller_agree'];
+} else {
+  $data['config_seller_agree'] = $this->config->get('config_seller_agree');
+}
+
+if (isset($this->request->post['config_seller_agree_id'])) {
+			$data['config_seller_agree_id'] = $this->request->post['config_seller_agree_id'];
+		} else {
+			$data['config_seller_agree_id'] = $this->config->get('config_seller_agree_id');
+		}
+
+$data['text_sellerreview'] = $this->language->get('text_sellerreview');
+
+if (isset($this->request->post['config_sellerreview'])) {
+						$data['config_sellerreview'] = $this->request->post['config_sellerreview'];
+					} else {
+						$data['config_sellerreview'] = $this->config->get('config_sellerreview');
+					}
+
+$data['text_sellerreviewguest'] = $this->language->get('text_sellerreviewguest');
+
+					if (isset($this->request->post['config_sellerreview_guest'])) {
+						$data['config_sellerreview_guest'] = $this->request->post['config_sellerreview_guest'];
+					} else {
+						$data['config_sellerreview_guest'] = $this->config->get('config_sellerreview_guest');
+					}
+
+$data['text_sellerimageupload'] = $this->language->get('text_sellerimageupload');
+$data['text_sellerprofileimage'] = $this->language->get('text_sellerprofileimage');
+$data['text_sellerproductname'] = $this->language->get('text_sellerproductname');
+$data['text_sellerproductimage'] = $this->language->get('text_sellerproductimage');
+$data['text_sellerproductdateofcreat'] = $this->language->get('text_sellerproductdateofcreat');
+$data['text_sellerproductbadge'] = $this->language->get('text_sellerproductbadge');
+$data['text_seller_add_product_alert'] = $this->language->get('text_seller_add_product_alert');
+$data['text_sellerproductcount'] = $this->language->get('text_sellerproductcount');
+$data['text_sellerproductrating'] = $this->language->get('text_sellerproductrating');
+$data['text_sellerwebsite'] = $this->language->get('text_sellerwebsite');
+$data['text_sellerfacebook'] = $this->language->get('text_sellerfacebook');
+$data['text_sellertwitter'] = $this->language->get('text_sellertwitter');
+$data['text_sellergoogleplus'] = $this->language->get('text_sellergoogleplus');
+$data['text_sellerinstagram'] = $this->language->get('text_sellerinstagram');
+
+if (isset($this->request->post['config_sellerimageupload'])) {
+						$data['config_sellerimageupload'] = $this->request->post['config_sellerimageupload'];
+					} else {
+						$data['config_sellerimageupload'] = $this->config->get('config_sellerimageupload');
+					}
+
+if (isset($this->request->post['config_sellerprofileimage'])) {
+						$data['config_sellerprofileimage'] = $this->request->post['config_sellerprofileimage'];
+					} else {
+						$data['config_sellerprofileimage'] = $this->config->get('config_sellerprofileimage');
+					}
+
+if (isset($this->request->post['config_sellerproductname'])) {
+						$data['config_sellerproductname'] = $this->request->post['config_sellerproductname'];
+					} else {
+						$data['config_sellerproductname'] = $this->config->get('config_sellerproductname');
+					}
+if (isset($this->request->post['config_sellerproductrating'])) {
+						$data['config_sellerproductrating'] = $this->request->post['config_sellerproductrating'];
+					} else {
+						$data['config_sellerproductrating'] = $this->config->get('config_sellerproductrating');
+					}
+if (isset($this->request->post['config_sellerproductimage'])) {
+						$data['config_sellerproductimage'] = $this->request->post['config_sellerproductimage'];
+					} else {
+						$data['config_sellerproductimage'] = $this->config->get('config_sellerproductimage');
+					}
+
+if (isset($this->request->post['config_sellerproductdateofcreat'])) {
+						$data['config_sellerproductdateofcreat'] = $this->request->post['config_sellerproductdateofcreat'];
+					} else {
+						$data['config_sellerproductdateofcreat'] = $this->config->get('config_sellerproductdateofcreat');
+					}
+
+if (isset($this->request->post['config_sellerproductbadge'])) {
+						$data['config_sellerproductbadge'] = $this->request->post['config_sellerproductbadge'];
+					} else {
+						$data['config_sellerproductbadge'] = $this->config->get('config_sellerproductbadge');
+					}
+          if (isset($this->request->post['config_seller_add_product_alert'])) {
+						$data['config_seller_add_product_alert'] = $this->request->post['config_seller_add_product_alert'];
+					} else {
+						$data['config_seller_add_product_alert'] = $this->config->get('config_seller_add_product_alert');
+					}
+
+if (isset($this->request->post['config_sellerproductcount'])) {
+						$data['config_sellerproductcount'] = $this->request->post['config_sellerproductcount'];
+					} else {
+						$data['config_sellerproductcount'] = $this->config->get('config_sellerproductcount');
+					}
+
+					if (isset($this->request->post['config_sellerwebsite'])) {
+						$data['config_sellerwebsite'] = $this->request->post['config_sellerwebsite'];
+					} else {
+						$data['config_sellerwebsite'] = $this->config->get('config_sellerwebsite');
+					}
+
+if (isset($this->request->post['config_sellerfacebook'])) {
+						$data['config_sellerfacebook'] = $this->request->post['config_sellerfacebook'];
+					} else {
+						$data['config_sellerfacebook'] = $this->config->get('config_sellerfacebook');
+					}
+
+if (isset($this->request->post['config_sellertwitter'])) {
+						$data['config_sellertwitter'] = $this->request->post['config_sellertwitter'];
+					} else {
+						$data['config_sellertwitter'] = $this->config->get('config_sellertwitter');
+					}
+if (isset($this->request->post['config_sellergoogleplus'])) {
+						$data['config_sellergoogleplus'] = $this->request->post['config_sellergoogleplus'];
+					} else {
+						$data['config_sellergoogleplus'] = $this->config->get('config_sellergoogleplus');
+					}
+if (isset($this->request->post['config_sellerinstagram'])) {
+						$data['config_sellerinstagram'] = $this->request->post['config_sellerinstagram'];
+					} else {
+						$data['config_sellerinstagram'] = $this->config->get('config_sellerinstagram');
+					}
+
+$data['text_sellerordersettlement'] = $this->language->get('text_sellerordersettlement');
+
+if (isset($this->request->post['config_sellerordersettlement'])) {
+						$data['config_sellerordersettlement'] = $this->request->post['config_sellerordersettlement'];
+					} else {
+						$data['config_sellerordersettlement'] = $this->config->get('config_sellerordersettlement');
+					}
+
+					$data['text_sellerorderstatus'] = $this->language->get('text_sellerorderstatus');
+
+if (isset($this->request->post['config_sellerorderstatus'])) {
+						$data['config_sellerorderstatus'] = $this->request->post['config_sellerorderstatus'];
+					} else {
+						$data['config_sellerorderstatus'] = $this->config->get('config_sellerorderstatus');
+					}
+
+					$data['text_sellerordernotifyhistory'] = $this->language->get('text_sellerordernotifyhistory');
+
+					if (isset($this->request->post['config_sellerordernotifyhistory'])) {
+											$data['config_sellerordernotifyhistory'] = $this->request->post['config_sellerordernotifyhistory'];
+										} else {
+											$data['config_sellerordernotifyhistory'] = $this->config->get('config_sellerordernotifyhistory');
+										}
+///////////////////////
+if (isset($this->request->post['config_multiseller_out_of_stock_status'])) {
+						$data['config_multiseller_out_of_stock_status'] = $this->request->post['config_multiseller_out_of_stock_status'];
+					} else {
+						$data['config_multiseller_out_of_stock_status'] = $this->config->get('config_multiseller_out_of_stock_status');
+					}
+if (isset($this->request->post['config_multiseller_date_available'])) {
+						$data['config_multiseller_date_available'] = $this->request->post['config_multiseller_date_available'];
+					} else {
+						$data['config_multiseller_date_available'] = $this->config->get('config_multiseller_date_available');
+					}
+if (isset($this->request->post['config_multiseller_subtract_stok'])) {
+						$data['config_multiseller_subtract_stok'] = $this->request->post['config_multiseller_subtract_stok'];
+					} else {
+						$data['config_multiseller_subtract_stok'] = $this->config->get('config_multiseller_subtract_stok');
+					}
+if (isset($this->request->post['config_multiseller_seo_url'])) {
+						$data['config_multiseller_seo_url'] = $this->request->post['config_multiseller_seo_url'];
+					} else {
+						$data['config_multiseller_seo_url'] = $this->config->get('config_multiseller_seo_url');
+					}
+if (isset($this->request->post['config_multiseller_dimensions'])) {
+						$data['config_multiseller_dimensions'] = $this->request->post['config_multiseller_dimensions'];
+					} else {
+						$data['config_multiseller_dimensions'] = $this->config->get('config_multiseller_dimensions');
+					}
+if (isset($this->request->post['config_multiseller_length_class'])) {
+						$data['config_multiseller_length_class'] = $this->request->post['config_multiseller_length_class'];
+					} else {
+						$data['config_multiseller_length_class'] = $this->config->get('config_multiseller_length_class');
+					}
+if (isset($this->request->post['config_multiseller_weight'])) {
+						$data['config_multiseller_weight'] = $this->request->post['config_multiseller_weight'];
+					} else {
+						$data['config_multiseller_weight'] = $this->config->get('config_multiseller_weight');
+					}
+if (isset($this->request->post['config_multiseller_weight_class'])) {
+						$data['config_multiseller_weight_class'] = $this->request->post['config_multiseller_weight_class'];
+					} else {
+						$data['config_multiseller_weight_class'] = $this->config->get('config_multiseller_weight_class');
+					}
+if (isset($this->request->post['config_multiseller_status'])) {
+						$data['config_multiseller_status'] = $this->request->post['config_multiseller_status'];
+					} else {
+						$data['config_multiseller_status'] = $this->config->get('config_multiseller_status');
+					}
+if (isset($this->request->post['config_multiseller_sort_order'])) {
+						$data['config_multiseller_sort_order'] = $this->request->post['config_multiseller_sort_order'];
+					} else {
+						$data['config_multiseller_sort_order'] = $this->config->get('config_multiseller_sort_order');
+					}
+					if (isset($this->request->post['config_multiseller_sku'])) {
+						$data['config_multiseller_sku'] = $this->request->post['config_multiseller_sku'];
+					} else {
+						$data['config_multiseller_sku'] = $this->config->get('config_multiseller_sku');
+					}
+					if (isset($this->request->post['config_multiseller_upc'])) {
+						$data['config_multiseller_upc'] = $this->request->post['config_multiseller_upc'];
+					} else {
+						$data['config_multiseller_upc'] = $this->config->get('config_multiseller_upc');
+					}
+					if (isset($this->request->post['config_multiseller_ean'])) {
+						$data['config_multiseller_ean'] = $this->request->post['config_multiseller_ean'];
+					} else {
+						$data['config_multiseller_ean'] = $this->config->get('config_multiseller_ean');
+					}
+					if (isset($this->request->post['config_multiseller_jan'])) {
+						$data['config_multiseller_jan'] = $this->request->post['config_multiseller_jan'];
+					} else {
+						$data['config_multiseller_jan'] = $this->config->get('config_multiseller_jan');
+					}
+					if (isset($this->request->post['config_multiseller_isbn'])) {
+						$data['config_multiseller_isbn'] = $this->request->post['config_multiseller_isbn'];
+					} else {
+						$data['config_multiseller_isbn'] = $this->config->get('config_multiseller_isbn');
+					}
+					if (isset($this->request->post['config_multiseller_out_of_stock_status'])) {
+						$data['config_multiseller_out_of_stock_status'] = $this->request->post['config_multiseller_out_of_stock_status'];
+					} else {
+						$data['config_multiseller_out_of_stock_status'] = $this->config->get('config_multiseller_out_of_stock_status');
+					}
+					if (isset($this->request->post['config_multiseller_location'])) {
+						$data['config_multiseller_location'] = $this->request->post['config_multiseller_location'];
+					} else {
+						$data['config_multiseller_location'] = $this->config->get('config_multiseller_location');
+					}
+					if (isset($this->request->post['config_multiseller_price'])) {
+						$data['config_multiseller_price'] = $this->request->post['config_multiseller_price'];
+					} else {
+						$data['config_multiseller_price'] = $this->config->get('config_multiseller_price');
+					}
+					if (isset($this->request->post['config_multiseller_tax_class'])) {
+						$data['config_multiseller_tax_class'] = $this->request->post['config_multiseller_tax_class'];
+					} else {
+						$data['config_multiseller_tax_class'] = $this->config->get('config_multiseller_tax_class');
+					}
+					if (isset($this->request->post['config_multiseller_quantity'])) {
+						$data['config_multiseller_quantity'] = $this->request->post['config_multiseller_quantity'];
+					} else {
+						$data['config_multiseller_quantity'] = $this->config->get('config_multiseller_quantity');
+					}
+					if (isset($this->request->post['config_multiseller_minimum_quantity'])) {
+						$data['config_multiseller_minimum_quantity'] = $this->request->post['config_multiseller_minimum_quantity'];
+					} else {
+						$data['config_multiseller_minimum_quantity'] = $this->config->get('config_multiseller_minimum_quantity');
+					}
+					if (isset($this->request->post['config_multiseller_mpn'])) {
+						$data['config_multiseller_mpn'] = $this->request->post['config_multiseller_mpn'];
+					} else {
+						$data['config_multiseller_mpn'] = $this->config->get('config_multiseller_mpn');
+					}
+
+					if (isset($this->request->post['config_multiseller_tax_class'])) {
+						$data['config_multiseller_tax_class'] = $this->request->post['config_multiseller_tax_class'];
+					} else {
+						$data['config_multiseller_tax_class'] = $this->config->get('config_multiseller_tax_class');
+					}
+					if (isset($this->request->post['config_multiseller_requires_shipping'])) {
+						$data['config_multiseller_requires_shipping'] = $this->request->post['config_multiseller_requires_shipping'];
+					} else {
+						$data['config_multiseller_requires_shipping'] = $this->config->get('config_multiseller_requires_shipping');
+					}
+if (isset($this->request->post['config_multiseller_image'])) {
+						$data['config_multiseller_image'] = $this->request->post['config_multiseller_image'];
+					} else {
+						$data['config_multiseller_image'] = $this->config->get('config_multiseller_image');
+					}
+		if (isset($this->request->post['config_multiseller_model'])) {
+						$data['config_multiseller_model'] = $this->request->post['config_multiseller_model'];
+					} else {
+						$data['config_multiseller_model'] = $this->config->get('config_multiseller_model');
+					}
+if (isset($this->request->post['config_multiseller_related_products'])) {
+						$data['config_multiseller_related_products'] = $this->request->post['config_multiseller_related_products'];
+					} else {
+						$data['config_multiseller_related_products'] = $this->config->get('config_multiseller_related_products');
+					}
+					if (isset($this->request->post['config_multiseller_downloads'])) {
+						$data['config_multiseller_downloads'] = $this->request->post['config_multiseller_downloads'];
+					} else {
+						$data['config_multiseller_downloads'] = $this->config->get('config_multiseller_downloads');
+					}
+					if (isset($this->request->post['config_multiseller_stors'])) {
+						$data['config_multiseller_stors'] = $this->request->post['config_multiseller_stors'];
+					} else {
+						$data['config_multiseller_stors'] = $this->config->get('config_multiseller_stors');
+					}
+					if (isset($this->request->post['config_multiseller_filters'])) {
+						$data['config_multiseller_filters'] = $this->request->post['config_multiseller_filters'];
+					} else {
+						$data['config_multiseller_filters'] = $this->config->get('config_multiseller_filters');
+					}
+					if (isset($this->request->post['config_multiseller_categories'])) {
+						$data['config_multiseller_categories'] = $this->request->post['config_multiseller_categories'];
+					} else {
+						$data['config_multiseller_categories'] = $this->config->get('config_multiseller_categories');
+					}
+					if (isset($this->request->post['config_multiseller_manufacturer'])) {
+						$data['config_multiseller_manufacturer'] = $this->request->post['config_multiseller_manufacturer'];
+					} else {
+						$data['config_multiseller_manufacturer'] = $this->config->get('config_multiseller_manufacturer');
+					}
+								if (isset($this->request->post['config_multiseller_tab_data'])) {
+						$data['config_multiseller_tab_data'] = $this->request->post['config_multiseller_tab_data'];
+					} else {
+						$data['config_multiseller_tab_data'] = $this->config->get('config_multiseller_tab_data');
+					}
+					if (isset($this->request->post['config_multiseller_tab_links'])) {
+						$data['config_multiseller_tab_links'] = $this->request->post['config_multiseller_tab_links'];
+					} else {
+						$data['config_multiseller_tab_links'] = $this->config->get('config_multiseller_tab_links');
+					}
+					if (isset($this->request->post['config_multiseller_tab_attribute'])) {
+						$data['config_multiseller_tab_attribute'] = $this->request->post['config_multiseller_tab_attribute'];
+					} else {
+						$data['config_multiseller_tab_attribute'] = $this->config->get('config_multiseller_tab_attribute');
+					}
+					if (isset($this->request->post['config_multiseller_tab_options'])) {
+						$data['config_multiseller_tab_options'] = $this->request->post['config_multiseller_tab_options'];
+					} else {
+						$data['config_multiseller_tab_options'] = $this->config->get('config_multiseller_tab_options');
+					}
+					if (isset($this->request->post['config_multiseller_tab_recurring'])) {
+						$data['config_multiseller_tab_recurring'] = $this->request->post['config_multiseller_tab_recurring'];
+					} else {
+						$data['config_multiseller_tab_recurring'] = $this->config->get('config_multiseller_tab_recurring');
+					}
+					if (isset($this->request->post['config_multiseller_tab_discount'])) {
+						$data['config_multiseller_tab_discount'] = $this->request->post['config_multiseller_tab_discount'];
+					} else {
+						$data['config_multiseller_tab_discount'] = $this->config->get('config_multiseller_tab_discount');
+					}
+					if (isset($this->request->post['config_multiseller_tab_special'])) {
+						$data['config_multiseller_tab_special'] = $this->request->post['config_multiseller_tab_special'];
+					} else {
+						$data['config_multiseller_tab_special'] = $this->config->get('config_multiseller_tab_special');
+					}
+					if (isset($this->request->post['config_multiseller_tab_image'])) {
+						$data['config_multiseller_tab_image'] = $this->request->post['config_multiseller_tab_image'];
+					} else {
+						$data['config_multiseller_tab_image'] = $this->config->get('config_multiseller_tab_image');
+					}
+					if (isset($this->request->post['config_multiseller_tab_reward_points'])) {
+						$data['config_multiseller_tab_reward_points'] = $this->request->post['config_multiseller_tab_reward_points'];
+					} else {
+						$data['config_multiseller_tab_reward_points'] = $this->config->get('config_multiseller_tab_reward_points');
+					}
+					if (isset($this->request->post['config_multiseller_tab_design'])) {
+						$data['config_multiseller_tab_design'] = $this->request->post['config_multiseller_tab_design'];
+					} else {
+						$data['config_multiseller_tab_design'] = $this->config->get('config_multiseller_tab_design');
+					}]]>
+      </add>
+    </operation>
+  </file>
+
+  <file path="admin/view/template/setting/setting.tpl">
+    <operation>
+      <search trim="true">
+        <![CDATA[<li><a href="#tab-server" data-toggle="tab"><?php echo $tab_server; ?></a></li>]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[<li><a href="#tab-multiseller-setting" data-toggle="tab"><?php echo $tab_multiseller_setting; ?></a></li>]]>
+      </add>
+    </operation>
+
+    <operation>
+      <search trim="true">
+        <![CDATA[<div class="tab-pane" id="tab-server">]]>
+      </search>
+      <add position="before" trim="false">
+        <![CDATA[<div class="tab-pane" id="tab-multiseller-setting">
+
+
+					        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-multisellergeneral" data-toggle="tab"><?php echo $tab_multisellergeneral; ?></a></li>
+            <li><a href="#tab-multisellerproductsetting" data-toggle="tab"><?php echo $tab_multisellerproductsetting; ?></a></li>
+         <li><a href="#tab-multisellerordersetting" data-toggle="tab"><?php echo $tab_multisellerordersetting; ?></a></li>
+		   <li><a href="#tab-multisellerdownloadsetting" data-toggle="tab"><?php echo $tab_multisellerdownloadsetting; ?></a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab-multisellergeneral">
+			 <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-account"><span data-toggle="tooltip" title=""><?php echo $text_seller_agree; ?></span></label>
+                  <div class="col-sm-10">
+                    <select name="config_seller_agree_id" id="input-account" class="form-control">
+                      <option value="0"><?php echo $text_none; ?></option>
+                      <?php foreach ($informations as $information) { ?>
+                      <?php if ($information['information_id'] == $config_seller_agree_id) { ?>
+                      <option value="<?php echo $information['information_id']; ?>" selected="selected"><?php echo $information['title']; ?></option>
+                      <?php } else { ?>
+                      <option value="<?php echo $information['information_id']; ?>"><?php echo $information['title']; ?></option>
+                      <?php } ?>
+                      <?php } ?>
+                    </select>
+                  </div>
+                </div>
+
+                <?php $chk = 'checked="checked"';?>
+                						<div class="form-group">
+                							<label class="col-sm-2 control-label" for="seller_add_product_alert-status"><?php echo $text_seller_add_product_alert; ?></label>
+                							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_seller_add_product_alert" value="1" <?php if($config_seller_add_product_alert==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_seller_add_product_alert" value="0" <?php if($config_seller_add_product_alert==0 || !$config_seller_add_product_alert){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+                						</div>
+
+
+									<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerreview-status"><?php echo $text_sellerreview; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerreview" value="1" <?php if($config_sellerreview==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerreview" value="0" <?php if($config_sellerreview==0 || !$config_sellerreview){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerreview-display-image"><?php echo $text_sellerreviewguest; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerreview_guest" value="1" <?php if($config_sellerreview_guest==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerreview_guest" value="0" <?php if($config_sellerreview_guest==0 || !$config_sellerreview_guest){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerimageupload-status"><?php echo $text_sellerimageupload; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerimageupload" value="1" <?php if($config_sellerimageupload==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerimageupload" value="0" <?php if($config_sellerimageupload==0 || !$config_sellerimageupload){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+
+							           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerprofileimage-status"><?php echo $text_sellerprofileimage; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerprofileimage" value="1" <?php if($config_sellerprofileimage==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerprofileimage" value="0" <?php if($config_sellerprofileimage==0 || !$config_sellerprofileimage){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+							           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductname-status"><?php echo $text_sellerproductname; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductname" value="1" <?php if($config_sellerproductname==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductname" value="0" <?php if($config_sellerproductname==0 || !$config_sellerproductname){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+							  		           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductimage-status"><?php echo $text_sellerproductimage; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductimage" value="1" <?php if($config_sellerproductimage==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductimage" value="0" <?php if($config_sellerproductimage==0 || !$config_sellerproductimage){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+							  </div>
+
+							  				           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductrating-status"><?php echo $text_sellerproductrating; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductrating" value="1" <?php if($config_sellerproductrating==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductrating" value="0" <?php if($config_sellerproductrating==0 || !$config_sellerproductrating){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+							  					           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductcount-status"><?php echo $text_sellerproductcount; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductcount" value="1" <?php if($config_sellerproductcount==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductcount" value="0" <?php if($config_sellerproductcount==0 || !$config_sellerproductcount){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+							           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductdateofcreat-status"><?php echo $text_sellerproductdateofcreat; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductdateofcreat" value="1" <?php if($config_sellerproductdateofcreat==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductdateofcreat" value="0" <?php if($config_sellerproductdateofcreat==0 || !$config_sellerproductdateofcreat){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+							           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerproductbadge-status"><?php echo $text_sellerproductbadge; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerproductbadge" value="1" <?php if($config_sellerproductbadge==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerproductbadge" value="0" <?php if($config_sellerproductbadge==0 || !$config_sellerproductbadge){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerwebsite-status"><?php echo $text_sellerwebsite; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerwebsite" value="1" <?php if($config_sellerwebsite==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerwebsite" value="0" <?php if($config_sellerwebsite==0 || !$config_sellerwebsite){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+							  					           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerfacebook-status"><?php echo $text_sellerfacebook; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerfacebook" value="1" <?php if($config_sellerfacebook==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerfacebook" value="0" <?php if($config_sellerfacebook==0 || !$config_sellerfacebook){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+							  					           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellertwitter-status"><?php echo $text_sellertwitter; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellertwitter" value="1" <?php if($config_sellertwitter==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellertwitter" value="0" <?php if($config_sellertwitter==0 || !$config_sellertwitter){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+							  					           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellergoogleplus-status"><?php echo $text_sellergoogleplus; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellergoogleplus" value="1" <?php if($config_sellergoogleplus==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellergoogleplus" value="0" <?php if($config_sellergoogleplus==0 || !$config_sellergoogleplus){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+							  					           						<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerinstagram-status"><?php echo $text_sellerinstagram; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerinstagram" value="1" <?php if($config_sellerinstagram==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerinstagram" value="0" <?php if($config_sellerinstagram==0 || !$config_sellerinstagram){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+
+
+						</div> <!-- // tab-multisellergeneral end // -->
+
+							  <div class="tab-pane active" id="tab-multisellerordersetting">
+
+
+
+
+									<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerorderstatus-status"><?php echo $text_sellerorderstatus; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerorderstatus" value="1" <?php if($config_sellerorderstatus==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerorderstatus" value="0" <?php if($config_sellerorderstatus==0 || !$config_sellerorderstatus){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerordernotifyhistory-status"><?php echo $text_sellerordernotifyhistory; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerordernotifyhistory" value="1" <?php if($config_sellerordernotifyhistory==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerordernotifyhistory" value="0" <?php if($config_sellerordernotifyhistory==0 || !$config_sellerordernotifyhistory){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerordersettlement-status"><?php echo $text_sellerordersettlement; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerordersettlement" value="1" <?php if($config_sellerordersettlement==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerordersettlement" value="0" <?php if($config_sellerordersettlement==0 || !$config_sellerordersettlement){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+						</div> <!-- // tab-multisellerordersetting end // -->
+							  <div class="tab-pane active" id="tab-multisellerdownloadsetting">
+
+
+
+
+									<?php $chk = 'checked="checked"';?>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="sellerdownloadstatus-status"><?php echo $text_sellerdownloadstatus; ?></label>
+							<div class="col-sm-10"><label class="radio-inline"><input type="radio" name="config_sellerdownloadstatus" value="1" <?php if($config_sellerdownloadstatus==1){echo $chk;}?> /> <?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_sellerdownloadstatus" value="0" <?php if($config_sellerdownloadstatus==0 || !$config_sellerdownloadstatus){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+						</div>
+
+
+
+						</div> <!-- // tab-multisellerdownloadsetting end // -->
+
+
+						<div class="tab-pane" id="tab-multisellerproductsetting">
+		                       <ul class="nav nav-tabs">
+            <li class="active"><a href="#tabM-general" data-toggle="tab">General</a></li>
+            <li><a href="#tabM-data" data-toggle="tab">Data</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_data" value="1" <?php if($config_multiseller_tab_data==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_data" value="0" <?php if($config_multiseller_tab_data==0 || !$config_multiseller_tab_data){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-links" data-toggle="tab">Links</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_links" value="1" <?php if($config_multiseller_tab_links==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_links" value="0" <?php if($config_multiseller_tab_links==0 || !$config_multiseller_tab_links){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-attribute" data-toggle="tab">Attribute</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_attribute" value="1" <?php if($config_multiseller_tab_attribute==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_attribute" value="0" <?php if($config_multiseller_tab_attribute==0 || !$config_multiseller_tab_attribute){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-option" data-toggle="tab">Option</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_options" value="1" <?php if($config_multiseller_tab_options==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_options" value="0" <?php if($config_multiseller_tab_options==0 || !$config_multiseller_tab_options){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-recurring" data-toggle="tab">Recurring</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_recurring" value="1" <?php if($config_multiseller_tab_recurring==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_recurring" value="0" <?php if($config_multiseller_tab_recurring==0 || !$config_multiseller_tab_recurring){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-discount" data-toggle="tab">Discount</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_discount" value="1" <?php if($config_multiseller_tab_discount==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_discount" value="0" <?php if($config_multiseller_tab_discount==0 || !$config_multiseller_tab_discount){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-special" data-toggle="tab">Special</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_special" value="1" <?php if($config_multiseller_tab_special==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_special" value="0" <?php if($config_multiseller_tab_special==0 || !$config_multiseller_tab_special){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-image" data-toggle="tab">Image</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_image" value="1" <?php if($config_multiseller_tab_image==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_image" value="0" <?php if($config_multiseller_tab_image==0 || !$config_multiseller_tab_image){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-reward" data-toggle="tab">Reward Points</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_reward_points" value="1" <?php if($config_multiseller_tab_reward_points==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_reward_points" value="0" <?php if($config_multiseller_tab_reward_points==0 || !$config_multiseller_tab_reward_points){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+            <li><a href="#tabM-design" data-toggle="tab">Design</a>|<label class="radio-inline"><input type="radio" name="config_multiseller_tab_design" value="1" <?php if($config_multiseller_tab_design==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tab_design" value="0" <?php if($config_multiseller_tab_design==0 || !$config_multiseller_tab_design){echo $chk;}?> /> <?php echo $text_no; ?></label></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tabM-general">
+              <ul class="nav nav-tabs" id="language">
+                                <li class="active"><a href="#language1" data-toggle="tab" aria-expanded="true"><img src="view/image/flags/gb.png" title="English"> English</a></li>
+                              </ul>
+              <div class="tab-content">
+                                <div class="tab-pane active" id="language1">
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-name1">Product Name</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="product_description[1][name]" value="" placeholder="Product Name" id="input-name1" class="form-control">
+                                          </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-description1">Description</label>
+                    <div class="col-sm-7">
+                      <textarea name="product_description[1][description]" placeholder="Description" id="input-description1" style="display: none;"></textarea><div class="note-editor"><div class="note-dropzone"><div class="note-dropzone-message"></div></div><div class="note-dialog"><div class="note-image-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4 class="modal-title">Insert Image</h4></div><form class="note-modal-form"><div class="modal-body"><div class="row-fluid"><div class="note-group-select-from-files"><h5>Select from files</h5><input class="note-image-input" type="file" name="files" accept="image/*"></div><h5>Image URL</h5><input class="note-image-url form-control span12" type="text"></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-image-btn disabled" disabled="">Insert Image</button></div></form></div></div></div><div class="note-link-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4 class="modal-title">Insert Link</h4></div><form class="note-modal-form"><div class="modal-body"><div class="row-fluid"><div class="form-group"><label>Text to display</label><input class="note-link-text form-control span12" type="text"></div><div class="form-group"><label>To what URL should this link go?</label><input class="note-link-url form-control span12" type="text"></div><div class="checkbox"><label><input type="checkbox" checked=""> Open in new window</label></div></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-link-btn disabled" disabled="">Insert Link</button></div></form></div></div></div><div class="note-video-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" aria-hidden="true" tabindex="-1">×</button><h4 class="modal-title">Insert Video</h4></div><form class="note-modal-form"><div class="modal-body"><div class="row-fluid"><div class="form-group"><label>Video URL?</label>&nbsp;<small class="text-muted">(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)</small><input class="note-video-url form-control span12" type="text"></div></div></div><div class="modal-footer"><button href="#" class="btn btn-primary note-video-btn disabled" disabled="">Insert Video</button></div></form></div></div></div><div class="note-help-dialog modal" aria-hidden="false"><div class="modal-dialog"><div class="modal-content"><form class="note-modal-form"><div class="modal-body"><div class="row-fluid"><a class="modal-close pull-right" aria-hidden="true" tabindex="-1">Close</a><div class="title">Keyboard shortcuts</div><p class="text-center"><a href="//hackerwins.github.io/summernote/" target="_blank">Summernote 0.5.8</a> · <a href="//github.com/HackerWins/summernote" target="_blank">Project</a> · <a href="//github.com/HackerWins/summernote/issues" target="_blank">Issues</a></p><table class="note-shortcut-layout"><tbody><tr><td><table class="note-shortcut"><thead><tr><th></th><th>Action</th></tr></thead><tbody><tr><td>Ctrl + Z</td><td>Undo</td></tr><tr><td>Ctrl + Shift + Z</td><td>Redo</td></tr><tr><td>Ctrl + ]</td><td>Indent</td></tr><tr><td>Ctrl + [</td><td>Outdent</td></tr><tr><td>Ctrl + ENTER</td><td>Insert Horizontal Rule</td></tr></tbody></table></td><td><table class="note-shortcut"><thead><tr><th></th><th>Text formatting</th></tr></thead><tbody><tr><td>Ctrl + B</td><td>Bold</td></tr><tr><td>Ctrl + I</td><td>Italic</td></tr><tr><td>Ctrl + U</td><td>Underline</td></tr><tr><td>Ctrl + Shift + S</td><td>Strikethrough</td></tr><tr><td>Ctrl + \</td><td>Remove Font Style</td></tr></tbody></table></td></tr><tr><td><table class="note-shortcut"><thead><tr><th></th><th>Document Style</th></tr></thead><tbody><tr><td>Ctrl + NUM0</td><td>Normal</td></tr><tr><td>Ctrl + NUM1</td><td>Header 1</td></tr><tr><td>Ctrl + NUM2</td><td>Header 2</td></tr><tr><td>Ctrl + NUM3</td><td>Header 3</td></tr><tr><td>Ctrl + NUM4</td><td>Header 4</td></tr><tr><td>Ctrl + NUM5</td><td>Header 5</td></tr><tr><td>Ctrl + NUM6</td><td>Header 6</td></tr></tbody></table></td><td><table class="note-shortcut"><thead><tr><th></th><th>Paragraph formatting</th></tr></thead><tbody><tr><td>Ctrl + Shift + L</td><td>Align left</td></tr><tr><td>Ctrl + Shift + E</td><td>Align center</td></tr><tr><td>Ctrl + Shift + R</td><td>Align right</td></tr><tr><td>Ctrl + Shift + J</td><td>Justify full</td></tr><tr><td>Ctrl + Shift + NUM7</td><td>Ordered list</td></tr><tr><td>Ctrl + Shift + NUM8</td><td>Unordered list</td></tr></tbody></table></td></tr></tbody></table></div></div></form></div></div></div></div><div class="note-handle"><div class="note-control-selection"><div class="note-control-selection-bg"></div><div class="note-control-holder note-control-nw"></div><div class="note-control-holder note-control-ne"></div><div class="note-control-holder note-control-sw"></div><div class="note-control-sizing note-control-se"></div><div class="note-control-selection-info"></div></div></div><div class="note-popover"><div class="note-link-popover popover bottom in" style="display: none;"><div class="arrow"></div><div class="popover-content"><a href="http://www.google.com" target="_blank">www.google.com</a>&nbsp;&nbsp;<div class="note-insert btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" tabindex="-1" data-original-title="Edit (CTRL+K)"><i class="fa fa-edit icon-edit"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="unlink" tabindex="-1" data-original-title="Unlink"><i class="fa fa-unlink icon-unlink"></i></button></div></div></div><div class="note-image-popover popover bottom in" style="display: none;"><div class="arrow"></div><div class="popover-content"><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="1" tabindex="-1" data-original-title="Resize Full"><span class="note-fontsize-10">100%</span></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="0.5" tabindex="-1" data-original-title="Resize Half"><span class="note-fontsize-10">50%</span></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="resize" data-value="0.25" tabindex="-1" data-original-title="Resize Quarter"><span class="note-fontsize-10">25%</span></button></div><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="left" tabindex="-1" data-original-title="Float Left"><i class="fa fa-align-left icon-align-left"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="right" tabindex="-1" data-original-title="Float Right"><i class="fa fa-align-right icon-align-right"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="floatMe" data-value="none" tabindex="-1" data-original-title="Float None"><i class="fa fa-align-justify icon-align-justify"></i></button></div><div class="btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="removeMedia" data-value="none" tabindex="-1" data-original-title="Remove Image"><i class="fa fa-trash-o icon-trash"></i></button></div></div></div></div><div class="note-toolbar btn-toolbar"><div class="note-style btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Style"><i class="fa fa-magic icon-magic"></i> <span class="caret"></span></button><ul class="dropdown-menu"><li><a data-event="formatBlock" href="#" data-value="p">Normal</a></li><li><a data-event="formatBlock" href="#" data-value="blockquote"><blockquote>Quote</blockquote></a></li><li><a data-event="formatBlock" href="#" data-value="pre">Code</a></li><li><a data-event="formatBlock" href="#" data-value="h1"><h1>Header 1</h1></a></li><li><a data-event="formatBlock" href="#" data-value="h2"><h2>Header 2</h2></a></li><li><a data-event="formatBlock" href="#" data-value="h3"><h3>Header 3</h3></a></li><li><a data-event="formatBlock" href="#" data-value="h4"><h4>Header 4</h4></a></li><li><a data-event="formatBlock" href="#" data-value="h5"><h5>Header 5</h5></a></li><li><a data-event="formatBlock" href="#" data-value="h6"><h6>Header 6</h6></a></li></ul></div><div class="note-font btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="bold" tabindex="-1" data-original-title="Bold (CTRL+B)"><i class="fa fa-bold icon-bold"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="italic" tabindex="-1" data-original-title="Italic (CTRL+I)"><i class="fa fa-italic icon-italic"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="underline" tabindex="-1" data-original-title="Underline (CTRL+U)"><i class="fa fa-underline icon-underline"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="superscript" tabindex="-1" data-original-title="Superscript"><i class="fa fa-superscript icon-superscript"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="subscript" tabindex="-1" data-original-title="Subscript"><i class="fa fa-subscript icon-subscript"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="strikethrough" tabindex="-1" data-original-title="Strikethrough (CTRL+SHIFT+S)"><i class="fa fa-strikethrough icon-strikethrough"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="removeFormat" tabindex="-1" data-original-title="Remove Font Style (CTRL+\)"><i class="fa fa-eraser icon-eraser"></i></button></div><div class="note-fontname btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Font Family"><span class="note-current-fontname">Helvetica Neue</span> <span class="caret"></span></button><ul class="dropdown-menu"><li><a data-event="fontName" href="#" data-value="Arial"><i class="fa fa-check icon-ok"></i> Arial</a></li><li><a data-event="fontName" href="#" data-value="Arial Black"><i class="fa fa-check icon-ok"></i> Arial Black</a></li><li><a data-event="fontName" href="#" data-value="Comic Sans MS"><i class="fa fa-check icon-ok"></i> Comic Sans MS</a></li><li><a data-event="fontName" href="#" data-value="Courier New"><i class="fa fa-check icon-ok"></i> Courier New</a></li><li><a data-event="fontName" href="#" data-value="Impact"><i class="fa fa-check icon-ok"></i> Impact</a></li><li><a data-event="fontName" href="#" data-value="Tahoma"><i class="fa fa-check icon-ok"></i> Tahoma</a></li><li><a data-event="fontName" href="#" data-value="Times New Roman"><i class="fa fa-check icon-ok"></i> Times New Roman</a></li><li><a data-event="fontName" href="#" data-value="Verdana"><i class="fa fa-check icon-ok"></i> Verdana</a></li></ul></div><div class="note-color btn-group"><button type="button" class="btn btn-default btn-sm btn-small note-recent-color" title="" data-event="color" data-value="{&quot;backColor&quot;:&quot;yellow&quot;}" tabindex="-1" data-original-title="Recent Color"><i class="fa fa-font icon-font" style="color:black;background-color:yellow;"></i></button><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="More Color"> <span class="caret"></span></button><ul class="dropdown-menu"><li><div class="btn-group"><div class="note-palette-title">Background Color</div><div class="note-color-reset" data-event="backColor" data-value="inherit" title="Transparent">Set transparent</div><div class="note-color-palette" data-target-event="backColor"><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="backColor" data-value="#000000" title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button" class="note-color-btn" style="background-color:#424242;" data-event="backColor" data-value="#424242" title="" data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn" style="background-color:#636363;" data-event="backColor" data-value="#636363" title="" data-toggle="button" tabindex="-1" data-original-title="#636363"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="backColor" data-value="#9C9C94" title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="backColor" data-value="#CEC6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="backColor" data-value="#EFEFEF" title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="backColor" data-value="#F7F7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="backColor" data-value="#FFFFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="backColor" data-value="#FF0000" title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00;" data-event="backColor" data-value="#FF9C00" title="" data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00;" data-event="backColor" data-value="#FFFF00" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFF00"></button><button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="backColor" data-value="#00FF00" title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="backColor" data-value="#00FFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button><button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="backColor" data-value="#0000FF" title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="backColor" data-value="#9C00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="backColor" data-value="#FF00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="backColor" data-value="#F7C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE;" data-event="backColor" data-value="#FFE7CE" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6;" data-event="backColor" data-value="#FFEFC6" title="" data-toggle="button" tabindex="-1" data-original-title="#FFEFC6"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="backColor" data-value="#D6EFD6" title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="backColor" data-value="#CEDEE7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="backColor" data-value="#CEE7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="backColor" data-value="#D6D6E7" title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="backColor" data-value="#E7D6DE" title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="backColor" data-value="#E79C9C" title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C;" data-event="backColor" data-value="#FFC69C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C;" data-event="backColor" data-value="#FFE79C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE79C"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="backColor" data-value="#B5D6A5" title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="backColor" data-value="#A5C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="backColor" data-value="#9CC6EF" title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="backColor" data-value="#B5A5D6" title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="backColor" data-value="#D6A5BD" title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="backColor" data-value="#E76363" title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B;" data-event="backColor" data-value="#F7AD6B" title="" data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn" style="background-color:#FFD663;" data-event="backColor" data-value="#FFD663" title="" data-toggle="button" tabindex="-1" data-original-title="#FFD663"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="backColor" data-value="#94BD7B" title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="backColor" data-value="#73A5AD" title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="backColor" data-value="#6BADDE" title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="backColor" data-value="#8C7BC6" title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="backColor" data-value="#C67BA5" title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="backColor" data-value="#CE0000" title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button" class="note-color-btn" style="background-color:#E79439;" data-event="backColor" data-value="#E79439" title="" data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn" style="background-color:#EFC631;" data-event="backColor" data-value="#EFC631" title="" data-toggle="button" tabindex="-1" data-original-title="#EFC631"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="backColor" data-value="#6BA54A" title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="backColor" data-value="#4A7B8C" title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button><button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="backColor" data-value="#3984C6" title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button><button type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="backColor" data-value="#634AA5" title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="backColor" data-value="#A54A7B" title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="backColor" data-value="#9C0000" title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button" class="note-color-btn" style="background-color:#B56308;" data-event="backColor" data-value="#B56308" title="" data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn" style="background-color:#BD9400;" data-event="backColor" data-value="#BD9400" title="" data-toggle="button" tabindex="-1" data-original-title="#BD9400"></button><button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="backColor" data-value="#397B21" title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button><button type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="backColor" data-value="#104A5A" title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button><button type="button" class="note-color-btn" style="background-color:#085294;" data-event="backColor" data-value="#085294" title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button><button type="button" class="note-color-btn" style="background-color:#311873;" data-event="backColor" data-value="#311873" title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button><button type="button" class="note-color-btn" style="background-color:#731842;" data-event="backColor" data-value="#731842" title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="backColor" data-value="#630000" title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button" class="note-color-btn" style="background-color:#7B3900;" data-event="backColor" data-value="#7B3900" title="" data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn" style="background-color:#846300;" data-event="backColor" data-value="#846300" title="" data-toggle="button" tabindex="-1" data-original-title="#846300"></button><button type="button" class="note-color-btn" style="background-color:#295218;" data-event="backColor" data-value="#295218" title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button><button type="button" class="note-color-btn" style="background-color:#083139;" data-event="backColor" data-value="#083139" title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button><button type="button" class="note-color-btn" style="background-color:#003163;" data-event="backColor" data-value="#003163" title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button><button type="button" class="note-color-btn" style="background-color:#21104A;" data-event="backColor" data-value="#21104A" title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button><button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="backColor" data-value="#4A1031" title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button></div></div></div><div class="btn-group"><div class="note-palette-title">Foreground Color</div><div class="note-color-reset" data-event="foreColor" data-value="inherit" title="Reset">Reset to default</div><div class="note-color-palette" data-target-event="foreColor"><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000;" data-event="foreColor" data-value="#000000" title="" data-toggle="button" tabindex="-1" data-original-title="#000000"></button><button type="button" class="note-color-btn" style="background-color:#424242;" data-event="foreColor" data-value="#424242" title="" data-toggle="button" tabindex="-1" data-original-title="#424242"></button><button type="button" class="note-color-btn" style="background-color:#636363;" data-event="foreColor" data-value="#636363" title="" data-toggle="button" tabindex="-1" data-original-title="#636363"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94;" data-event="foreColor" data-value="#9C9C94" title="" data-toggle="button" tabindex="-1" data-original-title="#9C9C94"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE;" data-event="foreColor" data-value="#CEC6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#CEC6CE"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF;" data-event="foreColor" data-value="#EFEFEF" title="" data-toggle="button" tabindex="-1" data-original-title="#EFEFEF"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7;" data-event="foreColor" data-value="#F7F7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#F7F7F7"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF;" data-event="foreColor" data-value="#FFFFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFFFF"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000;" data-event="foreColor" data-value="#FF0000" title="" data-toggle="button" tabindex="-1" data-original-title="#FF0000"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00;" data-event="foreColor" data-value="#FF9C00" title="" data-toggle="button" tabindex="-1" data-original-title="#FF9C00"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00;" data-event="foreColor" data-value="#FFFF00" title="" data-toggle="button" tabindex="-1" data-original-title="#FFFF00"></button><button type="button" class="note-color-btn" style="background-color:#00FF00;" data-event="foreColor" data-value="#00FF00" title="" data-toggle="button" tabindex="-1" data-original-title="#00FF00"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF;" data-event="foreColor" data-value="#00FFFF" title="" data-toggle="button" tabindex="-1" data-original-title="#00FFFF"></button><button type="button" class="note-color-btn" style="background-color:#0000FF;" data-event="foreColor" data-value="#0000FF" title="" data-toggle="button" tabindex="-1" data-original-title="#0000FF"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF;" data-event="foreColor" data-value="#9C00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#9C00FF"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF;" data-event="foreColor" data-value="#FF00FF" title="" data-toggle="button" tabindex="-1" data-original-title="#FF00FF"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE;" data-event="foreColor" data-value="#F7C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#F7C6CE"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE;" data-event="foreColor" data-value="#FFE7CE" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE7CE"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6;" data-event="foreColor" data-value="#FFEFC6" title="" data-toggle="button" tabindex="-1" data-original-title="#FFEFC6"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6;" data-event="foreColor" data-value="#D6EFD6" title="" data-toggle="button" tabindex="-1" data-original-title="#D6EFD6"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7;" data-event="foreColor" data-value="#CEDEE7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEDEE7"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7;" data-event="foreColor" data-value="#CEE7F7" title="" data-toggle="button" tabindex="-1" data-original-title="#CEE7F7"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7;" data-event="foreColor" data-value="#D6D6E7" title="" data-toggle="button" tabindex="-1" data-original-title="#D6D6E7"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE;" data-event="foreColor" data-value="#E7D6DE" title="" data-toggle="button" tabindex="-1" data-original-title="#E7D6DE"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C;" data-event="foreColor" data-value="#E79C9C" title="" data-toggle="button" tabindex="-1" data-original-title="#E79C9C"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C;" data-event="foreColor" data-value="#FFC69C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFC69C"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C;" data-event="foreColor" data-value="#FFE79C" title="" data-toggle="button" tabindex="-1" data-original-title="#FFE79C"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5;" data-event="foreColor" data-value="#B5D6A5" title="" data-toggle="button" tabindex="-1" data-original-title="#B5D6A5"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE;" data-event="foreColor" data-value="#A5C6CE" title="" data-toggle="button" tabindex="-1" data-original-title="#A5C6CE"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF;" data-event="foreColor" data-value="#9CC6EF" title="" data-toggle="button" tabindex="-1" data-original-title="#9CC6EF"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6;" data-event="foreColor" data-value="#B5A5D6" title="" data-toggle="button" tabindex="-1" data-original-title="#B5A5D6"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD;" data-event="foreColor" data-value="#D6A5BD" title="" data-toggle="button" tabindex="-1" data-original-title="#D6A5BD"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363;" data-event="foreColor" data-value="#E76363" title="" data-toggle="button" tabindex="-1" data-original-title="#E76363"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B;" data-event="foreColor" data-value="#F7AD6B" title="" data-toggle="button" tabindex="-1" data-original-title="#F7AD6B"></button><button type="button" class="note-color-btn" style="background-color:#FFD663;" data-event="foreColor" data-value="#FFD663" title="" data-toggle="button" tabindex="-1" data-original-title="#FFD663"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B;" data-event="foreColor" data-value="#94BD7B" title="" data-toggle="button" tabindex="-1" data-original-title="#94BD7B"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD;" data-event="foreColor" data-value="#73A5AD" title="" data-toggle="button" tabindex="-1" data-original-title="#73A5AD"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE;" data-event="foreColor" data-value="#6BADDE" title="" data-toggle="button" tabindex="-1" data-original-title="#6BADDE"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6;" data-event="foreColor" data-value="#8C7BC6" title="" data-toggle="button" tabindex="-1" data-original-title="#8C7BC6"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5;" data-event="foreColor" data-value="#C67BA5" title="" data-toggle="button" tabindex="-1" data-original-title="#C67BA5"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000;" data-event="foreColor" data-value="#CE0000" title="" data-toggle="button" tabindex="-1" data-original-title="#CE0000"></button><button type="button" class="note-color-btn" style="background-color:#E79439;" data-event="foreColor" data-value="#E79439" title="" data-toggle="button" tabindex="-1" data-original-title="#E79439"></button><button type="button" class="note-color-btn" style="background-color:#EFC631;" data-event="foreColor" data-value="#EFC631" title="" data-toggle="button" tabindex="-1" data-original-title="#EFC631"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A;" data-event="foreColor" data-value="#6BA54A" title="" data-toggle="button" tabindex="-1" data-original-title="#6BA54A"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C;" data-event="foreColor" data-value="#4A7B8C" title="" data-toggle="button" tabindex="-1" data-original-title="#4A7B8C"></button><button type="button" class="note-color-btn" style="background-color:#3984C6;" data-event="foreColor" data-value="#3984C6" title="" data-toggle="button" tabindex="-1" data-original-title="#3984C6"></button><button type="button" class="note-color-btn" style="background-color:#634AA5;" data-event="foreColor" data-value="#634AA5" title="" data-toggle="button" tabindex="-1" data-original-title="#634AA5"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B;" data-event="foreColor" data-value="#A54A7B" title="" data-toggle="button" tabindex="-1" data-original-title="#A54A7B"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000;" data-event="foreColor" data-value="#9C0000" title="" data-toggle="button" tabindex="-1" data-original-title="#9C0000"></button><button type="button" class="note-color-btn" style="background-color:#B56308;" data-event="foreColor" data-value="#B56308" title="" data-toggle="button" tabindex="-1" data-original-title="#B56308"></button><button type="button" class="note-color-btn" style="background-color:#BD9400;" data-event="foreColor" data-value="#BD9400" title="" data-toggle="button" tabindex="-1" data-original-title="#BD9400"></button><button type="button" class="note-color-btn" style="background-color:#397B21;" data-event="foreColor" data-value="#397B21" title="" data-toggle="button" tabindex="-1" data-original-title="#397B21"></button><button type="button" class="note-color-btn" style="background-color:#104A5A;" data-event="foreColor" data-value="#104A5A" title="" data-toggle="button" tabindex="-1" data-original-title="#104A5A"></button><button type="button" class="note-color-btn" style="background-color:#085294;" data-event="foreColor" data-value="#085294" title="" data-toggle="button" tabindex="-1" data-original-title="#085294"></button><button type="button" class="note-color-btn" style="background-color:#311873;" data-event="foreColor" data-value="#311873" title="" data-toggle="button" tabindex="-1" data-original-title="#311873"></button><button type="button" class="note-color-btn" style="background-color:#731842;" data-event="foreColor" data-value="#731842" title="" data-toggle="button" tabindex="-1" data-original-title="#731842"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000;" data-event="foreColor" data-value="#630000" title="" data-toggle="button" tabindex="-1" data-original-title="#630000"></button><button type="button" class="note-color-btn" style="background-color:#7B3900;" data-event="foreColor" data-value="#7B3900" title="" data-toggle="button" tabindex="-1" data-original-title="#7B3900"></button><button type="button" class="note-color-btn" style="background-color:#846300;" data-event="foreColor" data-value="#846300" title="" data-toggle="button" tabindex="-1" data-original-title="#846300"></button><button type="button" class="note-color-btn" style="background-color:#295218;" data-event="foreColor" data-value="#295218" title="" data-toggle="button" tabindex="-1" data-original-title="#295218"></button><button type="button" class="note-color-btn" style="background-color:#083139;" data-event="foreColor" data-value="#083139" title="" data-toggle="button" tabindex="-1" data-original-title="#083139"></button><button type="button" class="note-color-btn" style="background-color:#003163;" data-event="foreColor" data-value="#003163" title="" data-toggle="button" tabindex="-1" data-original-title="#003163"></button><button type="button" class="note-color-btn" style="background-color:#21104A;" data-event="foreColor" data-value="#21104A" title="" data-toggle="button" tabindex="-1" data-original-title="#21104A"></button><button type="button" class="note-color-btn" style="background-color:#4A1031;" data-event="foreColor" data-value="#4A1031" title="" data-toggle="button" tabindex="-1" data-original-title="#4A1031"></button></div></div></div></li></ul></div><div class="note-para btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertUnorderedList" tabindex="-1" data-original-title="Unordered list (CTRL+SHIFT+NUM7)"><i class="fa fa-list-ul icon-list-ul"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertOrderedList" tabindex="-1" data-original-title="Ordered list (CTRL+SHIFT+NUM8)"><i class="fa fa-list-ol icon-list-ol"></i></button><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Paragraph"><i class="fa fa-align-left icon-align-left"></i> <span class="caret"></span></button><div class="dropdown-menu"><div class="note-align btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyLeft" tabindex="-1" data-original-title="Align left (CTRL+SHIFT+L)"><i class="fa fa-align-left icon-align-left"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyCenter" tabindex="-1" data-original-title="Align center (CTRL+SHIFT+E)"><i class="fa fa-align-center icon-align-center"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyRight" tabindex="-1" data-original-title="Align right (CTRL+SHIFT+R)"><i class="fa fa-align-right icon-align-right"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="justifyFull" tabindex="-1" data-original-title="Justify full (CTRL+SHIFT+J)"><i class="fa fa-align-justify icon-align-justify"></i></button></div><div class="note-list btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="indent" tabindex="-1" data-original-title="Indent (CTRL+])"><i class="fa fa-indent icon-indent-right"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="outdent" tabindex="-1" data-original-title="Outdent (CTRL+[)"><i class="fa fa-outdent icon-indent-left"></i></button></div></div></div><div class="note-height btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Line Height"><i class="fa fa-text-height icon-text-height"></i> <span class="caret"></span></button><ul class="dropdown-menu"><li><a data-event="lineHeight" href="#" data-value="1"><i class="fa fa-check icon-ok"></i> 1.0</a></li><li><a data-event="lineHeight" href="#" data-value="1.2"><i class="fa fa-check icon-ok"></i> 1.2</a></li><li><a data-event="lineHeight" href="#" data-value="1.4"><i class="fa fa-check icon-ok"></i> 1.4</a></li><li><a data-event="lineHeight" href="#" data-value="1.5"><i class="fa fa-check icon-ok"></i> 1.5</a></li><li><a data-event="lineHeight" href="#" data-value="1.6"><i class="fa fa-check icon-ok"></i> 1.6</a></li><li><a data-event="lineHeight" href="#" data-value="1.8"><i class="fa fa-check icon-ok"></i> 1.8</a></li><li><a data-event="lineHeight" href="#" data-value="2"><i class="fa fa-check icon-ok"></i> 2.0</a></li><li><a data-event="lineHeight" href="#" data-value="3"><i class="fa fa-check icon-ok"></i> 3.0</a></li></ul></div><div class="note-table btn-group"><button type="button" class="btn btn-default btn-sm btn-small dropdown-toggle" data-toggle="dropdown" title="" tabindex="-1" data-original-title="Table"><i class="fa fa-table icon-table"></i> <span class="caret"></span></button><ul class="dropdown-menu"><div class="note-dimension-picker"><div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1" style="width: 10em; height: 10em;"></div><div class="note-dimension-picker-highlighted"></div><div class="note-dimension-picker-unhighlighted"></div></div><div class="note-dimension-display"> 1 x 1 </div></ul></div><div class="note-insert btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showLinkDialog" tabindex="-1" data-original-title="Link (CTRL+K)"><i class="fa fa-link icon-link"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" tabindex="-1" data-original-title="Picture" data-toggle="image"><i class="fa fa-picture-o icon-picture"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showVideoDialog" tabindex="-1" data-original-title="Video"><i class="fa fa-youtube-play icon-play"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="insertHorizontalRule" tabindex="-1" data-original-title="Insert Horizontal Rule (CTRL+ENTER)"><i class="fa fa-minus icon-hr"></i></button></div><div class="note-view btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="fullscreen" tabindex="-1" data-original-title="Full Screen"><i class="fa fa-arrows-alt icon-fullscreen"></i></button><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="codeview" tabindex="-1" data-original-title="Code View"><i class="fa fa-code icon-code"></i></button></div><div class="note-help btn-group"><button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showHelpDialog" tabindex="-1" data-original-title="Help"><i class="fa fa-question icon-question"></i></button></div></div><textarea class="note-codable"></textarea><div class="note-editable" contenteditable="true" style="height: 300px;"><p><br></p></div><div class="note-statusbar"><div class="note-resizebar"><div class="note-icon-bar"></div><div class="note-icon-bar"></div><div class="note-icon-bar"></div></div></div></div>
+                    </div>
+                  </div>
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-meta-title1">Meta Tag Title</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="product_description[1][meta_title]" value="" placeholder="Meta Tag Title" id="input-meta-title1" class="form-control">
+                                          </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-description1">Meta Tag Description</label>
+                    <div class="col-sm-7">
+                      <textarea name="product_description[1][meta_description]" rows="5" placeholder="Meta Tag Description" id="input-meta-description1" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-meta-keyword1">Meta Tag Keywords</label>
+                    <div class="col-sm-7">
+                      <textarea name="product_description[1][meta_keyword]" rows="5" placeholder="Meta Tag Keywords" id="input-meta-keyword1" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-tag1"><span data-toggle="tooltip" title="" data-original-title="comma separated">Product Tags</span></label>
+                    <div class="col-sm-7">
+                      <input type="text" name="product_description[1][tag]" value="" placeholder="Product Tags" id="input-tag1" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                              </div>
+            </div>
+            <div class="tab-pane" id="tabM-data">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-image">Image</label>
+                <div class="col-sm-7">
+                  <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="http://127.0.0.1/oc2101/image/cache/no_image-100x100.png" alt="" title="" data-placeholder="http://127.0.0.1/oc2101/image/cache/no_image-100x100.png"></a>
+                  <input type="hidden" name="image" value="" id="input-image">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_image" value="1" <?php if($config_multiseller_image==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_image" value="0" <?php if($config_multiseller_image==0 || !$config_multiseller_image){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-model">Model</label>
+                <div class="col-sm-7">
+                  <input type="text" name="model" value="" placeholder="Model" id="input-model" class="form-control">
+                  </div>
+                  <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_model" value="1" <?php if($config_multiseller_model==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_model" value="0" <?php if($config_multiseller_model==0 || !$config_multiseller_model){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="" data-original-title="Stock Keeping Unit">SKU</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="sku" value="" placeholder="SKU" id="input-sku" class="form-control">
+                </div>
+                 <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_sku" value="1" <?php if($config_multiseller_sku==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_sku" value="0" <?php if($config_multiseller_sku==0 || !$config_multiseller_sku){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-upc"><span data-toggle="tooltip" title="" data-original-title="Universal Product Code">UPC</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="upc" value="" placeholder="UPC" id="input-upc" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_upc" value="1" <?php if($config_multiseller_upc==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_upc" value="0" <?php if($config_multiseller_upc==0 || !$config_multiseller_upc){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="" data-original-title="European Article Number">EAN</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="ean" value="" placeholder="EAN" id="input-ean" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_ean" value="1" <?php if($config_multiseller_ean==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_ean" value="0" <?php if($config_multiseller_ean==0 || !$config_multiseller_ean){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-jan"><span data-toggle="tooltip" title="" data-original-title="Japanese Article Number">JAN</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="jan" value="" placeholder="JAN" id="input-jan" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_jan" value="1" <?php if($config_multiseller_jan==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_jan" value="0" <?php if($config_multiseller_jan==0 || !$config_multiseller_jan){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-isbn"><span data-toggle="tooltip" title="" data-original-title="International Standard Book Number">ISBN</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_isbn" value="1" <?php if($config_multiseller_isbn==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_isbn" value="0" <?php if($config_multiseller_isbn==0 || !$config_multiseller_isbn){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-mpn"><span data-toggle="tooltip" title="" data-original-title="Manufacturer Part Number">MPN</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_mpn" value="1" <?php if($config_multiseller_mpn==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_mpn" value="0" <?php if($config_multiseller_mpn==0 || !$config_multiseller_mpn){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-location">Location</label>
+                <div class="col-sm-7">
+                  <input type="text" name="location" value="" placeholder="Location" id="input-location" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_location" value="1" <?php if($config_multiseller_location==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_location" value="0" <?php if($config_multiseller_location==0 || !$config_multiseller_location){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-price">Price</label>
+                <div class="col-sm-7">
+                  <input type="text" name="price" value="" placeholder="Price" id="input-price" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_price" value="1" <?php if($config_multiseller_price==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_price" value="0" <?php if($config_multiseller_price==0 || !$config_multiseller_price){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-tax-class">Tax Class</label>
+                <div class="col-sm-7">
+                  <select name="tax_class_id" id="input-tax-class" class="form-control">
+                    <option value="0"> --- None --- </option>
+                                                            <option value="9">Taxable Goods</option>
+                                                                                <option value="10">Downloadable Products</option>
+                                                          </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_tax_class" value="1" <?php if($config_multiseller_tax_class==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_tax_class" value="0" <?php if($config_multiseller_tax_class==0 || !$config_multiseller_tax_class){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-quantity">Quantity</label>
+                <div class="col-sm-7">
+                  <input type="text" name="quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_quantity" value="1" <?php if($config_multiseller_quantity==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_quantity" value="0" <?php if($config_multiseller_quantity==0 || !$config_multiseller_quantity){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-minimum"><span data-toggle="tooltip" title="" data-original-title="Force a minimum ordered amount">Minimum Quantity</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_minimum_quantity" value="1" <?php if($config_multiseller_minimum_quantity==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_minimum_quantity" value="0" <?php if($config_multiseller_minimum_quantity==0 || !$config_multiseller_minimum_quantity){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-subtract">Subtract Stock</label>
+                <div class="col-sm-7">
+                  <select name="subtract" id="input-subtract" class="form-control">
+                                        <option value="1" selected="selected">Yes</option>
+                    <option value="0">No</option>
+                                      </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_subtract_stok" value="1" <?php if($config_multiseller_subtract_stok==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_subtract_stok" value="0" <?php if($config_multiseller_subtract_stok==0 || !$config_multiseller_subtract_stok){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-stock-status"><span data-toggle="tooltip" title="" data-original-title="Status shown when a product is out of stock">Out Of Stock Status</span></label>
+                <div class="col-sm-7">
+                  <select name="stock_status_id" id="input-stock-status" class="form-control">
+                                                            <option value="6">2-3 Days</option>
+                                                                                <option value="7">In Stock</option>
+                                                                                <option value="5">Out Of Stock</option>
+                                                                                <option value="8">Pre-Order</option>
+                                                          </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_out_of_stock_status" value="1" <?php if($config_multiseller_out_of_stock_status==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_out_of_stock_status" value="0" <?php if($config_multiseller_out_of_stock_status==0 || !$config_multiseller_out_of_stock_status){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Requires Shipping</label>
+                <div class="col-sm-7">
+                  <label class="radio-inline">
+                                        <input type="radio" name="shipping" value="1" checked="checked">
+                    Yes                                      </label>
+                  <label class="radio-inline">
+                                        <input type="radio" name="shipping" value="0">
+                    No                                      </label>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_requires_shipping" value="1" <?php if($config_multiseller_requires_shipping==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_requires_shipping" value="0" <?php if($config_multiseller_requires_shipping==0 || !$config_multiseller_requires_shipping){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="" data-original-title="Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.">SEO URL</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="keyword" value="" placeholder="SEO URL" id="input-keyword" class="form-control">
+                                  </div>
+                                  <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_seo_url" value="1" <?php if($config_multiseller_seo_url==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_seo_url" value="0" <?php if($config_multiseller_seo_url==0 || !$config_multiseller_seo_url){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-date-available">Date Available</label>
+                <div class="col-sm-3">
+                  <div class="input-group date">
+                    <input type="text" name="date_available" value="2016-02-13" placeholder="Date Available" data-date-format="YYYY-MM-DD" id="input-date-available" class="form-control">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                    </span></div>
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_date_available" value="1" <?php if($config_multiseller_date_available==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_date_available" value="0" <?php if($config_multiseller_date_available==0 || !$config_multiseller_date_available){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-length">Dimensions (L x W x H)</label>
+                <div class="col-sm-7">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <input type="text" name="length" value="" placeholder="Length" id="input-length" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" name="width" value="" placeholder="Width" id="input-width" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" name="height" value="" placeholder="Height" id="input-height" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_dimensions" value="1" <?php if($config_multiseller_dimensions==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_dimensions" value="0" <?php if($config_multiseller_dimensions==0 || !$config_multiseller_dimensions){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-length-class">Length Class</label>
+                <div class="col-sm-7">
+                  <select name="length_class_id" id="input-length-class" class="form-control">
+                                                            <option value="1" selected="selected">Centimeter</option>
+                                                                                <option value="2">Millimeter</option>
+                                                                                <option value="3">Inch</option>
+                                                          </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_length_class" value="1" <?php if($config_multiseller_length_class==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_length_class" value="0" <?php if($config_multiseller_length_class==0 || !$config_multiseller_length_class){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-weight">Weight</label>
+                <div class="col-sm-7">
+                  <input type="text" name="weight" value="" placeholder="Weight" id="input-weight" class="form-control">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_weight" value="1" <?php if($config_multiseller_weight==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_weight" value="0" <?php if($config_multiseller_weight==0 || !$config_multiseller_weight){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-weight-class">Weight Class</label>
+                <div class="col-sm-7">
+                  <select name="weight_class_id" id="input-weight-class" class="form-control">
+                                                            <option value="1" selected="selected">Kilogram</option>
+                                                                                <option value="2">Gram</option>
+                                                                                <option value="5">Pound </option>
+                                                                                <option value="6">Ounce</option>
+                                                          </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_weight_class" value="1" <?php if($config_multiseller_weight_class==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_weight_class" value="0" <?php if($config_multiseller_weight_class==0 || !$config_multiseller_weight_class){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-status">Status</label>
+                <div class="col-sm-7">
+                  <select name="status" id="input-status" class="form-control">
+                                        <option value="1" selected="selected">Enabled</option>
+                    <option value="0">Disabled</option>
+                                      </select>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_status" value="1" <?php if($config_multiseller_status==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_status" value="0" <?php if($config_multiseller_status==0 || !$config_multiseller_status){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sort-order">Sort Order</label>
+                <div class="col-sm-7">
+                  <input type="text" name="sort_order" value="1" placeholder="Sort Order" id="input-sort-order" class="form-control">
+                </div>
+              <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_sort_order" value="1" <?php if($config_multiseller_sort_order==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_sort_order" value="0" <?php if($config_multiseller_sort_order==0 || !$config_multiseller_sort_order){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+               </div>
+            </div>
+            <div class="tab-pane" id="tabM-links">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-manufacturer"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Manufacturer</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="manufacturer" value="" placeholder="Manufacturer" id="input-manufacturer" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                  <input type="hidden" name="manufacturer_id" value="0">
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_manufacturer" value="1" <?php if($config_multiseller_manufacturer==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_manufacturer" value="0" <?php if($config_multiseller_manufacturer==0 || !$config_multiseller_manufacturer){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Categories</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="category" value="" placeholder="Categories" id="input-category" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                  <div id="product-category" class="well well-sm" style="height: 150px; overflow: auto;">
+                                      </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_categories" value="1" <?php if($config_multiseller_categories==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_categories" value="0" <?php if($config_multiseller_categories==0 || !$config_multiseller_categories){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-filter"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Filters</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="filter" value="" placeholder="Filters" id="input-filter" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                  <div id="product-filter" class="well well-sm" style="height: 150px; overflow: auto;">
+                                      </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_filters" value="1" <?php if($config_multiseller_filters==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_filters" value="0" <?php if($config_multiseller_filters==0 || !$config_multiseller_filters){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Stores</label>
+                <div class="col-sm-7">
+                  <div class="well well-sm" style="height: 150px; overflow: auto;">
+                    <div class="checkbox">
+                      <label>
+                                                <input type="checkbox" name="product_store[]" value="0" checked="checked">
+                        Default                                              </label>
+                    </div>
+                                      </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_stors" value="1" <?php if($config_multiseller_stors==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_stors" value="0" <?php if($config_multiseller_stors==0 || !$config_multiseller_stors){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-download"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Downloads</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="download" value="" placeholder="Downloads" id="input-download" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                  <div id="product-download" class="well well-sm" style="height: 150px; overflow: auto;">
+                                      </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_downloads" value="1" <?php if($config_multiseller_downloads==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_downloads" value="0" <?php if($config_multiseller_downloads==0 || !$config_multiseller_downloads){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Related Products</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="related" value="" placeholder="Related Products" id="input-related" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                  <div id="product-related" class="well well-sm" style="height: 150px; overflow: auto;">
+                                      </div>
+                </div>
+                <div class="col-sm-3"><label class="radio-inline"><input type="radio" name="config_multiseller_related_products" value="1" <?php if($config_multiseller_related_products==1){echo $chk;}?> /><?php echo $text_yes; ?></label><label class="radio-inline"><input type="radio" name="config_multiseller_related_products" value="0" <?php if($config_multiseller_related_products==0 || !$config_multiseller_related_products){echo $chk;}?> /> <?php echo $text_no; ?></label></div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-attribute">
+              <div class="table-responsive">
+                <table id="attribute" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Attribute</td>
+                      <td class="text-left">Text</td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                          </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-left"><button type="button" onclick="addAttribute();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Attribute"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-option">
+              <div class="row">
+                <div class="col-sm-2">
+                  <ul class="nav nav-pills nav-stacked" id="option">
+                                                            <li>
+                      <input type="text" name="option" value="" placeholder="Option" id="input-option" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-7">
+                  <div class="tab-content">
+                                                                              </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-recurring">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Recurring Profile</td>
+                      <td class="text-left">Customer Group</td>
+                      <td class="text-left"></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                          </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-left"><button type="button" onclick="addRecurring()" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Recurring"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-discount">
+              <div class="table-responsive">
+                <table id="discount" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Customer Group</td>
+                      <td class="text-right">Quantity</td>
+                      <td class="text-right">Priority</td>
+                      <td class="text-right">Price</td>
+                      <td class="text-left">Date Start</td>
+                      <td class="text-left">Date End</td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                          </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6"></td>
+                      <td class="text-left"><button type="button" onclick="addDiscount();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Discount"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-special">
+              <div class="table-responsive">
+                <table id="special" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Customer Group</td>
+                      <td class="text-right">Priority</td>
+                      <td class="text-right">Price</td>
+                      <td class="text-left">Date Start</td>
+                      <td class="text-left">Date End</td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                          </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="5"></td>
+                      <td class="text-left"><button type="button" onclick="addSpecial();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Special"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-image">
+              <div class="table-responsive">
+                <table id="images" class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Image</td>
+                      <td class="text-right">Sort Order</td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                          </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Image"><i class="fa fa-plus-circle"></i></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-reward">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-points"><span data-toggle="tooltip" title="" data-original-title="Number of points needed to buy this item. If you don't want this product to be purchased with points leave as 0.">Points</span></label>
+                <div class="col-sm-7">
+                  <input type="text" name="points" value="" placeholder="Points" id="input-points" class="form-control">
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Customer Group</td>
+                      <td class="text-right">Reward Points</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                        <tr>
+                      <td class="text-left">Default</td>
+                      <td class="text-right"><input type="text" name="product_reward[1][points]" value="" class="form-control"></td>
+                    </tr>
+                                      </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="tabM-design">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td class="text-left">Stores</td>
+                      <td class="text-left">Layout Override</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">Default</td>
+                      <td class="text-left"><select name="product_layout[0]" class="form-control">
+                          <option value=""></option>
+                                                                              <option value="6">Account</option>
+                                                                                                        <option value="10">Affiliate</option>
+                                                                                                        <option value="3">Category</option>
+                                                                                                        <option value="7">Checkout</option>
+                                                                                                        <option value="12">Compare</option>
+                                                                                                        <option value="8">Contact</option>
+                                                                                                        <option value="4">Default</option>
+                                                                                                        <option value="1">Home</option>
+                                                                                                        <option value="11">Information</option>
+                                                                                                        <option value="5">Manufacturer</option>
+                                                                                                        <option value="2">Product</option>
+                                                                                                        <option value="13">Search</option>
+                                                                                                        <option value="9">Sitemap</option>
+                                                                            </select></td>
+                    </tr>
+                                      </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+</div> <!-- // tab-multisellerproductsetting end // -->
+					</div> <!-- // tab-content end // -->
+</div>]]>
+      </add>
+    </operation>
+  </file>
+
+</modification>

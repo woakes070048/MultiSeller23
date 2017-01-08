@@ -1,0 +1,28 @@
+MultiSeller Installation Instructions
+=======================================
+
+These installation instructions assume that you have either fresh or customized installation of OpenCart.
+
+
+1) Unzip the downloaded ZIP file into a new folder
+2) Copy all files from /Upload folder to your store root directory.
+3) Login to your OpenCart admin panel. Once you do that, go to Extensions -> Extension Installer.
+4) Click on the Upload button.
+4) Find alkodmultisellerextension.ocmod.zip on your computer and load it.
+5) OpenCart will begin the installation of the module along with the OCMod and when the operation is done you will receive the following message - Success: You have installed your extension!
+6) Go to Extensions > Modifications and click the [Refresh] button. 
+
+########################################
+
+
+Setting Configuration
+
+1. Login to your OpenCart admin panel.
+2. Go to Seller -> settings.
+3. Choose your seller agree from drop down list (you can add new one from Catalog -> information ) and click save.
+4 .Go to Multiseller menu and go to seller group then create your groups.
+
+
+Support & Feature Requests
+==========================
+alkod@alkod.com

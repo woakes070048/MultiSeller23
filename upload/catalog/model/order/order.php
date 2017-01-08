@@ -1,0 +1,701 @@
+<?php
+
+class ModelorderOrder extends Model
+{
+    public function getOrder($order_id, $seller_id)
+    {
+        $order_query = $this->db->query('SELECT * FROM `'.DB_PREFIX."order` o WHERE o.order_id = '".(int) $order_id."'");
+
+        $seller_order_query = $this->db->query("SELECT *, CONCAT(firstname, ' ', lastname) AS seller FROM `".DB_PREFIX."customer`  WHERE customer_id = '".(int) $seller_id."'");
+
+        if ($order_query->num_rows) {
+            $reward = 0;
+
+            $order_product_query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_product WHERE order_id = '".(int) $order_id."'");
+
+            foreach ($order_product_query->rows as $product) {
+                $reward += $product['reward'];
+            }
+
+            $country_query = $this->db->query('SELECT * FROM `'.DB_PREFIX."country` WHERE country_id = '".(int) $order_query->row['payment_country_id']."'");
+
+            if ($country_query->num_rows) {
+                $payment_iso_code_2 = $country_query->row['iso_code_2'];
+                $payment_iso_code_3 = $country_query->row['iso_code_3'];
+            } else {
+                $payment_iso_code_2 = '';
+                $payment_iso_code_3 = '';
+            }
+
+            $zone_query = $this->db->query('SELECT * FROM `'.DB_PREFIX."zone` WHERE zone_id = '".(int) $order_query->row['payment_zone_id']."'");
+
+            if ($zone_query->num_rows) {
+                $payment_zone_code = $zone_query->row['code'];
+            } else {
+                $payment_zone_code = '';
+            }
+
+            $country_query = $this->db->query('SELECT * FROM `'.DB_PREFIX."country` WHERE country_id = '".(int) $order_query->row['shipping_country_id']."'");
+
+            if ($country_query->num_rows) {
+                $shipping_iso_code_2 = $country_query->row['iso_code_2'];
+                $shipping_iso_code_3 = $country_query->row['iso_code_3'];
+            } else {
+                $shipping_iso_code_2 = '';
+                $shipping_iso_code_3 = '';
+            }
+
+            $zone_query = $this->db->query('SELECT * FROM `'.DB_PREFIX."zone` WHERE zone_id = '".(int) $order_query->row['shipping_zone_id']."'");
+
+            if ($zone_query->num_rows) {
+                $shipping_zone_code = $zone_query->row['code'];
+            } else {
+                $shipping_zone_code = '';
+            }
+
+            $this->load->model('localisation/language');
+
+            $language_info = $this->model_localisation_language->getLanguage($order_query->row['language_id']);
+
+            if ($language_info) {
+                $language_code = $language_info['code'];
+
+                $language_directory = $language_info['directory'];
+            } else {
+                $language_code = '';
+
+                $language_directory = '';
+            }
+
+            if ($order_query->row['affiliate_id']) {
+                $affiliate_id = $order_query->row['affiliate_id'];
+            } else {
+                $affiliate_id = 0;
+            }
+
+            $affiliate_info = $this->getAffiliate($affiliate_id);
+
+            if ($affiliate_info) {
+                $affiliate_firstname = $affiliate_info['firstname'];
+                $affiliate_lastname = $affiliate_info['lastname'];
+            } else {
+                $affiliate_firstname = '';
+                $affiliate_lastname = '';
+            }
+
+            $this->load->model('localisation/language');
+
+            $language_info = $this->model_localisation_language->getLanguage($order_query->row['language_id']);
+
+            if ($language_info) {
+                $language_code = $language_info['code'];
+
+                $language_directory = $language_info['directory'];
+            } else {
+                $language_code = '';
+
+                $language_directory = '';
+            }
+
+            return array(
+                'order_id' => $order_query->row['order_id'],
+                'order_status_id' => $order_query->row['order_status_id'],
+                'affiliate_id' => $order_query->row['affiliate_id'],
+                'invoice_no' => $order_query->row['invoice_no'],
+                'invoice_prefix' => $order_query->row['invoice_prefix'],
+                'store_id' => $order_query->row['store_id'],
+                'store_name' => $order_query->row['store_name'],
+                'store_url' => $order_query->row['store_url'],
+                'customer_id' => $seller_order_query->row['customer_id'],
+                'seller' => $seller_order_query->row['seller'],
+                'customer_group_id' => $seller_order_query->row['customer_group_id'],
+                'firstname' => $seller_order_query->row['firstname'],
+                'lastname' => $seller_order_query->row['lastname'],
+                'email' => $seller_order_query->row['email'],
+                'telephone' => $seller_order_query->row['telephone'],
+                'customer_email' => $order_query->row['email'],
+                'customer_telephone' => $order_query->row['telephone'],
+                'fax' => $seller_order_query->row['fax'],
+                'custom_field' => json_decode($order_query->row['custom_field'], true),
+                'payment_firstname' => $order_query->row['payment_firstname'],
+                'payment_lastname' => $order_query->row['payment_lastname'],
+                'payment_company' => $order_query->row['payment_company'],
+                'payment_address_1' => $order_query->row['payment_address_1'],
+                'payment_address_2' => $order_query->row['payment_address_2'],
+                'payment_postcode' => $order_query->row['payment_postcode'],
+                'payment_city' => $order_query->row['payment_city'],
+                'payment_zone_id' => $order_query->row['payment_zone_id'],
+                'payment_zone' => $order_query->row['payment_zone'],
+                'payment_zone_code' => $payment_zone_code,
+                'payment_country_id' => $order_query->row['payment_country_id'],
+                'payment_country' => $order_query->row['payment_country'],
+                'payment_iso_code_2' => $payment_iso_code_2,
+                'payment_iso_code_3' => $payment_iso_code_3,
+                'payment_address_format' => $order_query->row['payment_address_format'],
+                'payment_custom_field' => json_decode($order_query->row['payment_custom_field'], true),
+                'payment_method' => $order_query->row['payment_method'],
+                'payment_code' => $order_query->row['payment_code'],
+                'shipping_firstname' => $order_query->row['shipping_firstname'],
+                'shipping_lastname' => $order_query->row['shipping_lastname'],
+                'shipping_company' => $order_query->row['shipping_company'],
+                'shipping_address_1' => $order_query->row['shipping_address_1'],
+                'shipping_address_2' => $order_query->row['shipping_address_2'],
+                'shipping_postcode' => $order_query->row['shipping_postcode'],
+                'shipping_city' => $order_query->row['shipping_city'],
+                'shipping_zone_id' => $order_query->row['shipping_zone_id'],
+                'shipping_zone' => $order_query->row['shipping_zone'],
+                'shipping_zone_code' => $shipping_zone_code,
+                'shipping_country_id' => $order_query->row['shipping_country_id'],
+                'shipping_country' => $order_query->row['shipping_country'],
+                'shipping_iso_code_2' => $shipping_iso_code_2,
+                'shipping_iso_code_3' => $shipping_iso_code_3,
+                'shipping_address_format' => $order_query->row['shipping_address_format'],
+                'shipping_custom_field' => json_decode($order_query->row['shipping_custom_field'], true),
+                'shipping_method' => $order_query->row['shipping_method'],
+                'shipping_code' => $order_query->row['shipping_code'],
+                'comment' => $order_query->row['comment'],
+                'total' => $order_query->row['total'],
+                'reward' => $reward,
+                'order_status_id' => $order_query->row['order_status_id'],
+                'affiliate_id' => $order_query->row['affiliate_id'],
+                'affiliate_firstname' => $affiliate_firstname,
+                'affiliate_lastname' => $affiliate_lastname,
+                'commission' => $order_query->row['commission'],
+                'language_id' => $order_query->row['language_id'],
+                'language_code' => $language_code,
+                'language_directory' => $language_directory,
+                'currency_id' => $order_query->row['currency_id'],
+                'currency_code' => $order_query->row['currency_code'],
+                'currency_value' => $order_query->row['currency_value'],
+                'ip' => $order_query->row['ip'],
+                'forwarded_ip' => $order_query->row['forwarded_ip'],
+                'user_agent' => $order_query->row['user_agent'],
+                'accept_language' => $order_query->row['accept_language'],
+                'date_added' => $order_query->row['date_added'],
+                'date_modified' => $order_query->row['date_modified'],
+            );
+        } else {
+            return;
+        }
+    }
+
+    public function getOrders($data = array())
+    {
+        $sql = "
+		SELECT *, SUM(op.total) as totals, CONCAT(c.firstname, ' ', c.lastname) AS seller,c.customer_id as customer_id ,
+		(SELECT os.name FROM ".DB_PREFIX."order_status os
+		WHERE os.order_status_id = o.order_status_id
+		AND os.language_id = '".(int) $this->config->get('config_language_id')."') AS status FROM `".DB_PREFIX.'customer` c
+		LEFT JOIN  `'.DB_PREFIX.'product_to_seller` cp ON (c.customer_id = cp.seller_id)
+		LEFT JOIN  `'.DB_PREFIX.'order_product` op ON (cp.product_id = op.product_id)
+		LEFT JOIN  `'.DB_PREFIX.'order` o ON (op.order_id = o.order_id)
+		';
+
+        if (isset($data['filter_order_status']) && !is_null($data['filter_order_status'])) {
+            $sql .= " WHERE o.order_status_id = '".(int) $data['filter_order_status']."'";
+        } else {
+            $sql .= " WHERE o.order_status_id > '0'";
+        }
+
+        if (!empty($data['filter_order_id'])) {
+            $sql .= " AND o.order_id = '".(int) $data['filter_order_id']."'";
+        }
+
+        if (!empty($data['filter_customer'])) {
+            $sql .= " AND CONCAT(c.firstname, ' ', c.lastname) LIKE '%".$this->db->escape($data['filter_customer'])."%'";
+        }
+
+        if (!empty($data['filter_date_added'])) {
+            $sql .= " AND DATE(o.date_added) = DATE('".$this->db->escape($data['filter_date_added'])."')";
+        }
+
+        if (!empty($data['filter_date_modified'])) {
+            $sql .= " AND DATE(o.date_modified) = DATE('".$this->db->escape($data['filter_date_modified'])."')";
+        }
+
+        if (!empty($data['filter_total'])) {
+            $sql .= " AND op.total = '".(float) $data['filter_total']."'";
+        }
+        // get only order that seller have product in
+        //	$sql .= " AND o.order_id  IN (SELECT order_id FROM " . DB_PREFIX . "order_product WHERE  product_id IN (SELECT product_id FROM product_to_seller ))";
+
+            $sql .= " AND c.customer_id = '".$this->customer->getId()."'";
+        $sort_data = array(
+            'o.order_id',
+            'customer',
+            'status',
+            'o.date_added',
+            'o.date_modified',
+            'op.total',
+        );
+
+        $sql .= ' GROUP BY c.customer_id ,op.order_id';
+
+        if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+            $sql .= ' ORDER BY '.$data['sort'];
+        } else {
+            $sql .= ' ORDER BY o.order_id';
+        }
+
+        if (isset($data['order']) && ($data['order'] == 'DESC')) {
+            $sql .= ' DESC';
+        } else {
+            $sql .= ' ASC';
+        }
+
+        if (isset($data['start']) || isset($data['limit'])) {
+            if ($data['start'] < 0) {
+                $data['start'] = 0;
+            }
+
+            if ($data['limit'] < 1) {
+                $data['limit'] = 20;
+            }
+
+            $sql .= ' LIMIT '.(int) $data['start'].','.(int) $data['limit'];
+        }
+
+        $query = $this->db->query($sql);
+
+        return $query->rows;
+    }
+    public function getSellrOrdersettlement($order_id, $seller_id)
+    {
+        $sql = '
+    SELECT oss.settlement FROM `'.DB_PREFIX."order_seller_settlement` oss
+    WHERE oss.order_id = '".(int) $order_id."'
+    AND oss.seller_id = '".(int) $seller_id."'
+    AND oss.settlement = '1'
+    ";
+
+        $query = $this->db->query($sql);
+
+        return $query->row;
+    }
+    public function getOrderProducts($order_id, $seller_id)
+    {
+        //$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+            $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_product WHERE order_id = '".(int) $order_id."' AND product_id IN (SELECT product_id FROM ".DB_PREFIX."product_to_seller WHERE seller_id = '".(int) $seller_id."')");
+
+        return $query->rows;
+    }
+
+    public function getOrderOption($order_id, $order_option_id)
+    {
+        $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_option WHERE order_id = '".(int) $order_id."' AND order_option_id = '".(int) $order_option_id."'");
+
+        return $query->row;
+    }
+
+    public function getOrderOptions($order_id, $order_product_id)
+    {
+        $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_option WHERE order_id = '".(int) $order_id."' AND order_product_id = '".(int) $order_product_id."'");
+
+        return $query->rows;
+    }
+
+    public function getOrderVouchers($order_id)
+    {
+        $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_voucher WHERE order_id = '".(int) $order_id."'");
+
+        return $query->rows;
+    }
+
+    public function getOrderVoucherByVoucherId($voucher_id)
+    {
+        $query = $this->db->query('SELECT * FROM `'.DB_PREFIX."order_voucher` WHERE voucher_id = '".(int) $voucher_id."'");
+
+        return $query->row;
+    }
+
+    public function getOrderTotals($order_id,$seller_id)
+    {
+        $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_total WHERE order_id = '".(int) $order_id."' AND seller_id = '".(int) $seller_id."' ORDER BY sort_order");
+
+        return $query->rows;
+    }
+
+    public function getOrderTotalsTotal($order_id,$seller_id)
+    {
+        $query = $this->db->query('SELECT SUM(value) as totals FROM '.DB_PREFIX."order_total WHERE order_id = '".(int) $order_id."' AND seller_id = '".(int) $seller_id."'");
+
+        return $query->row['totals'];
+    }
+
+
+    public function getTotalOrders($data = array())
+    {
+        $sql = 'SELECT COUNT(*) AS total FROM `'.DB_PREFIX.'order` o
+      WHERE  o.order_id IN (SELECT op.order_id  FROM `'.DB_PREFIX.'product_to_seller` cp
+        LEFT JOIN  `'.DB_PREFIX.'order_product` op ON (cp.product_id = op.product_id) WHERE cp.seller_id ='.$this->customer->getId().' )
+        ';
+
+        if (!empty($data['filter_order_status'])) {
+            $implode = array();
+
+            $order_statuses = explode(',', $data['filter_order_status']);
+
+            foreach ($order_statuses as $order_status_id) {
+                $implode[] = "order_status_id = '".(int) $order_status_id."'";
+            }
+
+            if ($implode) {
+                $sql .= ' AND ('.implode(' OR ', $implode).')';
+            }
+        } else {
+            $sql .= " AND order_status_id > '0'";
+        }
+
+        if (!empty($data['filter_order_id'])) {
+            $sql .= " AND order_id = '".(int) $data['filter_order_id']."'";
+        }
+
+        if (!empty($data['filter_seller'])) {
+            $sql .= " AND CONCAT(firstname, ' ', lastname) LIKE '%".$this->db->escape($data['filter_seller'])."%'";
+        }
+
+        if (!empty($data['filter_date_added'])) {
+            $sql .= " AND DATE(date_added) = DATE('".$this->db->escape($data['filter_date_added'])."')";
+        }
+
+        if (!empty($data['filter_date_modified'])) {
+            $sql .= " AND DATE(date_modified) = DATE('".$this->db->escape($data['filter_date_modified'])."')";
+        }
+
+        if (!empty($data['filter_total'])) {
+            $sql .= " AND total = '".(float) $data['filter_total']."'";
+        }
+
+
+
+
+        $query = $this->db->query($sql);
+
+        return $query->row['total'];
+    }
+
+    public function getTotalOrdersByStoreId($store_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX."order` WHERE store_id = '".(int) $store_id."'");
+
+        return $query->row['total'];
+    }
+
+    public function getTotalOrdersByOrderStatusId($order_status_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX."order` WHERE order_status_id = '".(int) $order_status_id."' AND order_status_id > '0'");
+
+        return $query->row['total'];
+    }
+
+    public function getTotalOrdersByProcessingStatus()
+    {
+        $implode = array();
+
+        $order_statuses = $this->config->get('config_processing_status');
+
+        foreach ($order_statuses as $order_status_id) {
+            $implode[] = "order_status_id = '".(int) $order_status_id."'";
+        }
+
+        if ($implode) {
+            $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX.'order` WHERE '.implode(' OR ', $implode).'');
+
+            return $query->row['total'];
+        } else {
+            return 0;
+        }
+    }
+
+    public function getTotalOrdersByCompleteStatus()
+    {
+        $implode = array();
+
+        $order_statuses = $this->config->get('config_complete_status');
+
+        foreach ($order_statuses as $order_status_id) {
+            $implode[] = "order_status_id = '".(int) $order_status_id."'";
+        }
+
+        if ($implode) {
+            $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX.'order` WHERE '.implode(' OR ', $implode).'');
+
+            return $query->row['total'];
+        } else {
+            return 0;
+        }
+    }
+
+    public function getTotalOrdersByLanguageId($language_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX."order` WHERE language_id = '".(int) $language_id."' AND order_status_id > '0'");
+
+        return $query->row['total'];
+    }
+
+    public function getTotalOrdersByCurrencyId($currency_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM `'.DB_PREFIX."order` WHERE currency_id = '".(int) $currency_id."' AND order_status_id > '0'");
+
+        return $query->row['total'];
+    }
+
+    public function createInvoiceNo($order_id, $seller_id)
+    {
+        $order_info = $this->getOrder($order_id, $seller_id);
+
+        if ($order_info && !$order_info['invoice_no']) {
+            $query = $this->db->query('SELECT MAX(invoice_no) AS invoice_no FROM `'.DB_PREFIX."order` WHERE invoice_prefix = '".$this->db->escape($order_info['invoice_prefix'])."'");
+
+            if ($query->row['invoice_no']) {
+                $invoice_no = $query->row['invoice_no'] + 1;
+            } else {
+                $invoice_no = 1;
+            }
+
+            $this->db->query('UPDATE `'.DB_PREFIX."order` SET invoice_no = '".(int) $invoice_no."', invoice_prefix = '".$this->db->escape($order_info['invoice_prefix'])."' WHERE order_id = '".(int) $order_id."'");
+
+            return $order_info['invoice_prefix'].$invoice_no;
+        }
+    }
+
+    public function getOrderHistories($order_id, $seller_id, $start = 0, $limit = 10)
+    {
+        if ($start < 0) {
+            $start = 0;
+        }
+
+        if ($limit < 1) {
+            $limit = 10;
+        }
+
+        $query = $this->db->query('SELECT oh.date_added, os.name AS status, oh.order_status_id, oh.comment, oh.notify FROM '.DB_PREFIX.'order_sellerhistory oh LEFT JOIN '.DB_PREFIX."order_status os ON oh.order_status_id = os.order_status_id WHERE oh.order_id = '".(int) $order_id."' AND oh.seller_id = '".(int) $seller_id."' AND os.language_id = '".(int) $this->config->get('config_language_id')."' ORDER BY oh.date_added ASC LIMIT ".(int) $start.','.(int) $limit);
+
+        return $query->rows;
+    }
+
+    public function getTotalOrderHistories($order_id, $seller_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM '.DB_PREFIX."order_sellerhistory WHERE order_id = '".(int) $order_id."' AND seller_id = '".(int) $seller_id."' ");
+
+        return $query->row['total'];
+    }
+
+    public function getTotalOrderHistoriesByOrderStatusId($order_status_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM '.DB_PREFIX."order_sellerhistory WHERE order_status_id = '".(int) $order_status_id."'");
+
+        return $query->row['total'];
+    }
+
+    public function getEmailsByProductsOrdered($products, $start, $end)
+    {
+        $implode = array();
+
+        foreach ($products as $product_id) {
+            $implode[] = "op.product_id = '".(int) $product_id."'";
+        }
+
+        $query = $this->db->query('SELECT DISTINCT email FROM `'.DB_PREFIX.'order` o LEFT JOIN '.DB_PREFIX.'order_product op ON (o.order_id = op.order_id) WHERE ('.implode(' OR ', $implode).") AND o.order_status_id <> '0' LIMIT ".(int) $start.','.(int) $end);
+
+        return $query->rows;
+    }
+
+    public function getTotalEmailsByProductsOrdered($products)
+    {
+        $implode = array();
+
+        foreach ($products as $product_id) {
+            $implode[] = "op.product_id = '".(int) $product_id."'";
+        }
+
+        $query = $this->db->query('SELECT DISTINCT email FROM `'.DB_PREFIX.'order` o LEFT JOIN '.DB_PREFIX.'order_product op ON (o.order_id = op.order_id) WHERE ('.implode(' OR ', $implode).") AND o.order_status_id <> '0'");
+
+        return $query->row['total'];
+    }
+
+    public function getOrderBySeller($seller_id, $order_id)
+    {
+        $sql = '
+		SELECT *, SUM(op.total) as totals
+		FROM `'.DB_PREFIX.'product_to_seller` cp
+		LEFT JOIN  `'.DB_PREFIX.'order_product` op ON (cp.product_id = op.product_id)
+		LEFT JOIN  `'.DB_PREFIX."order` o ON (op.order_id = o.order_id)
+		WHERE op.order_id = '".$order_id."'
+		AND cp.seller_id = '".$seller_id."'";
+
+        // get only order that seller have product in
+        //	$sql .= " AND o.order_id  IN (SELECT order_id FROM " . DB_PREFIX . "order_product WHERE  product_id IN (SELECT product_id FROM product_to_seller ))";
+
+        //$sql .= " GROUP BY c.customer_id ,op.order_id";
+
+        $query = $this->db->query($sql);
+
+        return $query->row;
+    }
+
+    public function addOrderHistory($order_id, $order_status_id, $seller_id, $comment = '', $notify = false, $override = false)
+    {
+        $this->db->query('INSERT INTO '.DB_PREFIX."order_history SET order_id = '".(int) $order_id."', order_status_id = '".(int) $order_status_id."', notify = '".(int) $notify."', comment = '".$this->db->escape($comment)."', date_added = NOW(), seller_id = '".(int) $seller_id."'");
+    }
+
+    public function getSellerGroup($seller_group_id)
+    {
+        $query = $this->db->query('SELECT DISTINCT * FROM '.DB_PREFIX.'seller_group cg LEFT JOIN '.DB_PREFIX."seller_group_description cgd ON (cg.seller_group_id = cgd.seller_group_id) WHERE cg.seller_group_id = '".(int) $seller_group_id."' AND cgd.language_id = '".(int) $this->config->get('config_language_id')."'");
+
+        return $query->row;
+    }
+
+    public function getTotalsellerRewardsByOrderId($order_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM '.DB_PREFIX."customer_reward WHERE order_id = '".(int) $order_id."'");
+
+        return $query->row['total'];
+    }
+
+    public function getOrderStatuses($data = array())
+    {
+        if ($data) {
+            $sql = 'SELECT * FROM '.DB_PREFIX."order_status WHERE language_id = '".(int) $this->config->get('config_language_id')."'";
+
+            $sql .= ' ORDER BY name';
+
+            if (isset($data['order']) && ($data['order'] == 'DESC')) {
+                $sql .= ' DESC';
+            } else {
+                $sql .= ' ASC';
+            }
+
+            if (isset($data['start']) || isset($data['limit'])) {
+                if ($data['start'] < 0) {
+                    $data['start'] = 0;
+                }
+
+                if ($data['limit'] < 1) {
+                    $data['limit'] = 20;
+                }
+
+                $sql .= ' LIMIT '.(int) $data['start'].','.(int) $data['limit'];
+            }
+
+            $query = $this->db->query($sql);
+
+            return $query->rows;
+        } else {
+            $order_status_data = $this->cache->get('order_status.'.(int) $this->config->get('config_language_id'));
+
+            if (!$order_status_data) {
+                $query = $this->db->query('SELECT order_status_id, name FROM '.DB_PREFIX."order_status WHERE language_id = '".(int) $this->config->get('config_language_id')."' ORDER BY name");
+
+                $order_status_data = $query->rows;
+
+                $this->cache->set('order_status.'.(int) $this->config->get('config_language_id'), $order_status_data);
+            }
+
+            return $order_status_data;
+        }
+    }
+
+    public function getOrderStatus($order_status_id)
+    {
+        $query = $this->db->query('SELECT * FROM '.DB_PREFIX."order_status WHERE order_status_id = '".(int) $order_status_id."' AND language_id = '".(int) $this->config->get('config_language_id')."'");
+
+        return $query->row;
+    }
+
+    public function getTotalTransactionsByOrderId($order_id)
+    {
+        $query = $this->db->query('SELECT COUNT(*) AS total FROM '.DB_PREFIX."affiliate_transaction WHERE order_id = '".(int) $order_id."'");
+
+        return $query->row['total'];
+    }
+
+    public function getAffiliate($affiliate_id)
+    {
+        $query = $this->db->query('SELECT DISTINCT * FROM '.DB_PREFIX."affiliate WHERE affiliate_id = '".(int) $affiliate_id."'");
+
+        return $query->row;
+    }
+
+    public function AddSellrOrdersettlement($order_id, $seller_id)
+    {
+        $this->db->query('
+			DELETE FROM '.DB_PREFIX."order_seller_settlement
+			WHERE order_id = '".$order_id."'
+			AND seller_id = '".(int) $seller_id."'
+			");
+
+        $this->db->query('INSERT INTO '.DB_PREFIX."order_seller_settlement
+			SET order_id = '".$order_id."',
+			seller_id = '".(int) $seller_id."',
+			settlement = '1',
+			date_added = NOW()");
+    }
+
+    public function CancelSellrOrdersettlement($order_id, $seller_id)
+    {
+        $this->db->query('
+			DELETE FROM '.DB_PREFIX."order_seller_settlement
+			WHERE order_id = '".$order_id."'
+			AND seller_id = '".(int) $seller_id."'
+			");
+    }
+
+    public function isSellerOrder($order_id,$seller_id)
+    {
+
+
+      $sql = '
+  SELECT *
+  FROM `'.DB_PREFIX.'product_to_seller` cp
+  LEFT JOIN  `'.DB_PREFIX.'order_product` op ON (cp.product_id = op.product_id)
+  LEFT JOIN  `'.DB_PREFIX."order` o ON (op.order_id = o.order_id)
+  WHERE op.order_id = '".$order_id."'
+  AND cp.seller_id = '".$seller_id."'";
+
+
+      $query = $this->db->query($sql);
+
+      return $query->row;
+
+    }
+
+    public function sellerproductorderchangestatus($order_id,$product_id,$status_id)
+    {
+
+
+            $this->db->query('UPDATE `'.DB_PREFIX."order_product` SET status_id = '".(int) $status_id."' WHERE order_id = '".(int) $order_id."' AND product_id = '".(int) $product_id."'");
+
+    }
+    public function sellerproductorderdelete($order_id,$product_id)
+    {
+
+
+            $this->db->query('DELETE FROM '.DB_PREFIX."order_product
+      			WHERE order_id = '".$order_id."'
+      			AND product_id = '".(int) $product_id."'
+      			");
+
+            $this->db->query('DELETE FROM '.DB_PREFIX."order_total
+      			WHERE order_id = '".$order_id."'
+      			AND product_id = '".(int) $product_id."'
+      			");
+
+
+
+    }
+    public function addOrderSellerHistory($order_id,$seller_id,$order_status_id, $comment = '', $notify = false) {
+
+
+		$order_info = $this->getOrder($order_id,$seller_id);
+
+		if ($order_info) {
+
+
+			$this->db->query("INSERT INTO " . DB_PREFIX . "order_sellerhistory SET order_id = '" . (int)$order_id . "', order_status_id = '" . (int)$order_status_id . "', notify = '" . (int)$notify . "', seller_id = '" . (int)$seller_id . "', comment = '" . $this->db->escape($comment) . "', date_added = NOW()");
+
+
+
+  }
+	}
+}
