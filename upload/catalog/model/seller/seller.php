@@ -29,6 +29,7 @@ class Modelsellerseller extends Model
       LEFT JOIN ".DB_PREFIX."seller_group_description cgd
       ON (c.seller_group_id = cgd.seller_group_id)
       WHERE cgd.language_id = '".(int) $this->config->get('config_language_id')."'
+      AND ct.customer_id = '".(int) $this->customer->getID()."'
       GROUP BY c.customer_id
       ";
 
