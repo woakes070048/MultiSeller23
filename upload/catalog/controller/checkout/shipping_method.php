@@ -141,7 +141,7 @@ class ControllerCheckoutShippingMethod extends Controller
 
             }
 
-            $data['sellers'][] = array(
+            $data['store'][] = array(
               'seller_id' => '0',
               'seller_name' => $this->config->get('config_name'),
               'shipping_methods' => $method_data,

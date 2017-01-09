@@ -2,9 +2,10 @@
 <div class="alert alert-warning"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
 <?php } ?>
 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-  <div class="well" style="background-color: white;border: 1px solid #000000;box-shadow: 5px 8px 5px #353535;">
+
 
 <?php if ($shipping_methods) { ?>
+    <div class="well" style="background-color: white;border: 1px solid #000000;box-shadow: 5px 8px 5px #353535;">
 <p><?php echo $text_shipping_method; ?></p>
 <?php foreach ($shipping_methods as $shipping_method) { ?>
 <p><strong><?php echo $shipping_method['title']; ?></strong></p>
@@ -25,14 +26,15 @@
 <?php } ?>
 <?php } ?>
 <?php } ?>
+  <?php foreach ($store as $store) { ?>
 
-<div class="table-responsive">
-  <?php foreach ($sellers as $seller) { ?>
-  <?php if(!$seller['seller_id']) {?>
+
+  <?php if($store['product_data']) {?>
+    <div class="table-responsive">
   <table class="table table-bordered table-hover">
 <thead>
       <tr>
-        <td class="text-left" colspan="5"><a href="<?php echo $seller['href']; ?>"><?php echo $seller['seller_name']; ?></a></td>
+        <td class="text-left" colspan="5"><a href="<?php echo $seller['href']; ?>"><?php echo $store['seller_name']; ?></a></td>
       </tr>
     </thead>
       <tr>
@@ -46,7 +48,7 @@
         <td class="text-right"><?php echo $column_total; ?></td>
       </tr>
 
-    <?php foreach ($seller['product_data'] as $product) { ?>
+    <?php foreach ($store['product_data'] as $product) { ?>
     <tbody>
 
       <tr>
@@ -66,14 +68,18 @@
 <?php } ?>
 
   </table>
+  </div>
     <?php } ?>
-    <?php } ?>
+
+
 </div>
-</div>
-<div class="well" style="background-color: white;border: 1px solid #000000;box-shadow: 5px 8px 5px #ab6969;">
-<div class="table-responsive">
+  <?php } ?>
+
   <?php foreach ($sellers as $seller) { ?>
+
   <?php if($seller['seller_id']) {?>
+    <div class="well" style="background-color: white;border: 1px solid #000000;box-shadow: 5px 8px 5px #ab6969;">
+    <div class="table-responsive">
   <table class="table table-bordered table-hover">
 <thead>
       <tr>
@@ -134,10 +140,12 @@
 <?php } ?>
 
   </table>
-    <?php } ?>
-    <?php } ?>
 </div>
 </div>
+    <?php } ?>
+
+    <?php } ?>
+
 
 
 <p><strong><?php echo $text_comments; ?></strong></p>
