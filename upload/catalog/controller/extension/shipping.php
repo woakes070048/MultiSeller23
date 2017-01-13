@@ -5,11 +5,15 @@ class ControllerExtensionShipping extends Controller {
 	public function index() {
 		$this->load->language('extension/shipping');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+		if ($this->customer->isSeller()) {
+				$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('extension/seller_extension');
 
-		$this->getList();
+				$this->getList();
+			} else {
+								$this->response->redirect($this->url->link('sellerprofile/sellerprofile', '', 'SSL'));
+						}
 	}
 
 	public function getList() {

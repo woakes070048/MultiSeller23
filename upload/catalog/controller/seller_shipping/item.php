@@ -9,6 +9,11 @@ class ControllerSellerShippingItem extends Controller {
 
 		$this->load->model('extension/seller_extension');
 
+		if (!$this->customer->isSeller()) {
+
+								$this->response->redirect($this->url->link('sellerprofile/sellerprofile', '', 'SSL'));
+						}
+
 		$seller_id = $this->customer->getId();
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
@@ -75,7 +80,7 @@ class ControllerSellerShippingItem extends Controller {
 			$data['item_name'] = $this->request->post['item_name'];
 		} else {
 			$data['item_name'] = $this->config->get($seller_id.':'.'item_name');
-		}		
+		}
 
 		if (isset($this->request->post['item_tax_class_id'])) {
 			$data['item_tax_class_id'] = $this->request->post['item_tax_class_id'];

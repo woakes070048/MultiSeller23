@@ -8,6 +8,11 @@ class ControllerSellerShippingFree extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('extension/seller_extension');
+		
+		if (!$this->customer->isSeller()) {
+
+								$this->response->redirect($this->url->link('sellerprofile/sellerprofile', '', 'SSL'));
+						}
 
 		$seller_id = $this->customer->getId();
 
