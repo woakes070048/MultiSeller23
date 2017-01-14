@@ -34,7 +34,7 @@
   <table class="table table-bordered table-hover">
 <thead>
       <tr>
-        <td class="text-left" colspan="5"><a href="<?php echo $seller['href']; ?>"><?php echo $store['seller_name']; ?></a></td>
+        <td class="text-left" colspan="5"><a href="<?php echo $store['href']; ?>"><?php echo $store['seller_name']; ?></a></td>
       </tr>
     </thead>
       <tr>

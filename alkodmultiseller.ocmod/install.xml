@@ -540,6 +540,8 @@ $data['seller_profile_at_product_page']='0';
 			}
 
 
+				}else{
+					$data['seller_rating'] = '0';
 				}
 
 

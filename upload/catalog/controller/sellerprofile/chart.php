@@ -11,7 +11,7 @@ class ControllersellerprofileChart extends Controller {
 		$data['text_year'] = $this->language->get('text_year');
 		$data['text_view'] = $this->language->get('text_view');
 
-		$data['token'] = $this->session->data['token'];
+	
 
 		return $this->load->view('sellerprofile/chart', $data);
 	}
@@ -22,7 +22,7 @@ class ControllersellerprofileChart extends Controller {
 		$json = array();
 
 		$this->load->model('sellerreport/sale');
-	
+
 
 		$json['order'] = array();
 

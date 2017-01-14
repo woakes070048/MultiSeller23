@@ -4,7 +4,6 @@ class Modelsellerreviewsellerreview extends Model
 {
     public function addsellerreview($data)
     {
-        $this->event->trigger('pre.admin.sellerreview.add', $data);
 
         $this->db->query('INSERT INTO '.DB_PREFIX."sellerreview SET customer_name = '".$this->db->escape($data['customer_name'])."', seller_id = '".(int) $data['seller_id']."', text = '".$this->db->escape(strip_tags($data['text']))."', rating = '".(int) $data['rating']."', status = '".(int) $data['status']."', date_added = NOW()");
 
@@ -12,31 +11,26 @@ class Modelsellerreviewsellerreview extends Model
 
         $this->cache->delete('seller');
 
-        $this->event->trigger('post.admin.sellerreview.add', $sellerreview_id);
 
         return $sellerreview_id;
     }
 
     public function editsellerreview($sellerreview_id, $data)
     {
-        $this->event->trigger('pre.admin.sellerreview.edit', $data);
 
         $this->db->query('UPDATE '.DB_PREFIX."sellerreview SET customer_name = '".$this->db->escape($data['customer_name'])."', seller_id = '".(int) $data['seller_id']."', text = '".$this->db->escape(strip_tags($data['text']))."', rating = '".(int) $data['rating']."', status = '".(int) $data['status']."', date_modified = NOW() WHERE sellerreview_id = '".(int) $sellerreview_id."'");
 
         $this->cache->delete('seller');
 
-        $this->event->trigger('post.admin.sellerreview.edit', $sellerreview_id);
     }
 
     public function deletesellerreview($sellerreview_id)
     {
-        $this->event->trigger('pre.admin.sellerreview.delete', $sellerreview_id);
 
         $this->db->query('DELETE FROM '.DB_PREFIX."sellerreview WHERE sellerreview_id = '".(int) $sellerreview_id."'");
 
         $this->cache->delete('seller');
 
-        $this->event->trigger('post.admin.sellerreview.delete', $sellerreview_id);
     }
 
     public function getsellerreview($sellerreview_id)

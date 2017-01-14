@@ -535,7 +535,7 @@ class Controllersellerseller extends Controller
 
         foreach ($results as $result) {
             $data['sellerreviews'][] = array(
-                'seller_name' => $result['seller_name'],
+                'customer_name' => $result['customer_name'],
                 'text' => nl2br($result['text']),
                 'rating' => (int) $result['rating'],
                 'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),

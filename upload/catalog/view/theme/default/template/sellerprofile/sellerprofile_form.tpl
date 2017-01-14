@@ -16,7 +16,6 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-<script src="admin/view/javascript/summernote/lang/summernote-ar-AR.js"></script>
 <link href="admin/view/javascript/summernote/summernote.css" rel="stylesheet">
 <script type="text/javascript" src="admin/view/javascript/summernote/summernote.js"></script>
 

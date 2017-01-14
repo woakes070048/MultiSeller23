@@ -8,7 +8,7 @@ class ControllerSellerprofileMap extends Controller {
 		$data['text_order'] = $this->language->get('text_order');
 		$data['text_sale'] = $this->language->get('text_sale');
 
-		$data['token'] = $this->session->data['token'];
+		
 
 		return $this->load->view('sellerprofile/map', $data);
 	}

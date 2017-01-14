@@ -2,7 +2,7 @@
 <?php foreach ($sellerreviews as $sellerreview) { ?>
 <table class="table table-striped table-bordered">
   <tr>
-    <td style="width: 50%;"><strong><?php echo $sellerreview['seller_name']; ?></strong></td>
+    <td style="width: 50%;"><strong><?php echo $sellerreview['customer_name']; ?></strong></td>
     <td class="text-right"><?php echo $sellerreview['date_added']; ?></td>
   </tr>
   <tr>

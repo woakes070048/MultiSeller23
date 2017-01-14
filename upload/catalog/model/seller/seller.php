@@ -250,7 +250,7 @@ class Modelsellerseller extends Model
             $limit = 20;
         }
 
-        $query = $this->db->query('SELECT r.sellerreview_id, r.seller_name, r.rating, r.text, p.customer_id, r.date_added FROM '.DB_PREFIX.'sellerreview r LEFT JOIN '.DB_PREFIX."customer p ON (r.seller_id = p.customer_id)  WHERE p.customer_id = '".(int) $seller_id."' AND r.status = '1'  ORDER BY r.date_added DESC LIMIT ".(int) $start.','.(int) $limit);
+        $query = $this->db->query('SELECT r.sellerreview_id, r.customer_name, r.rating, r.text, p.customer_id, r.date_added FROM '.DB_PREFIX.'sellerreview r LEFT JOIN '.DB_PREFIX."customer p ON (r.seller_id = p.customer_id)  WHERE p.customer_id = '".(int) $seller_id."' AND r.status = '1'  ORDER BY r.date_added DESC LIMIT ".(int) $start.','.(int) $limit);
 
         return $query->rows;
     }
@@ -275,7 +275,7 @@ class Modelsellerseller extends Model
     {
 
 
-        $this->db->query('INSERT INTO '.DB_PREFIX."sellerreview SET seller_name = '".$this->db->escape($data['name'])."', seller_id = '".(int) $seller_id."', customer_id = '".(int) $this->customer->getID()."', text = '".$this->db->escape(strip_tags($data['text']))."', rating = '".(int) $data['rating']."', date_added = NOW()");
+        $this->db->query('INSERT INTO '.DB_PREFIX."sellerreview SET customer_name = '".$this->db->escape($data['name'])."', seller_id = '".(int) $seller_id."', customer_id = '".(int) $this->customer->getID()."', text = '".$this->db->escape(strip_tags($data['text']))."', rating = '".(int) $data['rating']."', date_added = NOW()");
 
         $sellerreview_id = $this->db->getLastId();
 
