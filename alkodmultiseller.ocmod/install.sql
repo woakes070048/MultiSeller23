@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `oc_sellerreview` (
 `sellerreview_id` int(11) NOT NULL AUTO_INCREMENT,
   `seller_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `seller_name` varchar(64) NOT NULL,
+  `customer_name` varchar(64) NOT NULL,
   `text` text NOT NULL,
   `rating` int(1) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
